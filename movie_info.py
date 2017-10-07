@@ -85,6 +85,7 @@ def run(taskList,start = 0):
             print("Not found in database")
         data = fetch_info(w)
         if data:
+            data['error'] = 'Success!'
             db.movie_info.insert(data)
             print("DB updated!")
             print(data)
