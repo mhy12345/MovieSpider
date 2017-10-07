@@ -1,4 +1,3 @@
-from utils.proxy import getHtmlViaProxy
 from bs4 import BeautifulSoup
 import bs4
 import re
@@ -97,6 +96,8 @@ def run(taskList,start = 0):
     
 
 if __name__=='__main__':
-    run(id_list)
+    currentList = id_list
+    random.shuffle(currentList)
+    run(currentList)
     #run(id_list)
     print(db.movie_info.find({}))
