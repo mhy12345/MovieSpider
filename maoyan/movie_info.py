@@ -128,17 +128,20 @@ def clean(mid = None):
 
 
 if __name__ == "__main__":
-    mid = 1
-    clean()
+    mid = 600
     while True:
         def run(func,mid):
+            cnt = 0
             while True:
+                cnt += 1
                 res = func(mid)
                 print(func.__name__,"(%d)"%mid,"...",res)
                 if res == "Success":
                     break
                 if res == "Banned":
                     time.sleep(random.randint(1,5))
+                if res == 'Not found' and cnt>=3:
+                    break
         if db.maoyan_status.find_one({'id':mid}):
             print(mid,"Already Exist!")
             mid += 1
@@ -150,4 +153,4 @@ if __name__ == "__main__":
         db.maoyan_status.save({'id':mid})
         print(mid)
         mid += 1
-        time.sleep(1)
+        #time.sleep(1)

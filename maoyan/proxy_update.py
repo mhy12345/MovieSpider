@@ -6,6 +6,7 @@ import random
 import urllib
 import socket
 import datetime
+import time
 
 
 def init():
@@ -34,6 +35,7 @@ def update_ips():
         port=re.findall(port_compile,str(data))  
         global ips
         ips.extend([":".join(i) for i in zip(ip,port)])
+        time.sleep(1)
 
 def get_ips_as_string():
     global ips
