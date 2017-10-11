@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html class="">
+<head>
+<meta charset="utf-8" />
+<meta name="keywords" content="猫眼票房分析,猫眼电影,电影票房,实时票房,日票房,预售票房,影片票房趋势,受众画像,实时排片,预售排片,上座率,历史票房" />
+<meta name="description" content="猫眼票房分析，提供最准确的每日电影实时票房、排片、上座率查询，为电影从业者提供最及时、专业的数据分析服务" />
+<meta http-equiv="Cache-Control" CONTENT="no-cache" />
+<meta http-equiv="Pragma" CONTENT="no-cache" />
+<meta http-equiv="cache-control" CONTENT="no-store" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="csrf" content="3c4e596f9b9b3e9dc29f45947389ad77270695f8" />
+<link rel="dns-prefetch" href="//analytics.meituan.com" />
+<link rel="dns-prefetch" href="//ms0.meituan.net" />
+<link rel="dns-prefetch" href="//mc.meituan.net" />
+<link rel="dns-prefetch" href="//s0.meituan.net" />
+<link rel="dns-prefetch" href="//p0.meituan.net" />
+<link rel="dns-prefetch" href="//p1.meituan.net" />
+<link rel="apple-touch-icon" href="//ms0.meituan.net/piaofang/img/wx_pic-daf3a7c4.png" />
+<link rel="icon" type="image/x-icon" href="//ms0.meituan.net/piaofang/img/favicon-f8defb48.ico" />
+<meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, user-scalable=no">
+<link rel="shortcut icon" type="image/x-icon" href="//ms0.meituan.net/piaofang/img/favicon-f8defb48.ico" />
+
+
+<style id="js-nuwa">
+  @font-face{font-family:"cs";src:url(data:application/font-woff;charset=utf-8;base64,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) format("woff");}
+.cs{font-family:cs}
+</style>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', function() {
+    var images = document.querySelectorAll('.need-handle-pic');
+    for(var i = 0; i < images.length; i++) {
+        var imgItem = images[i];
+        var className = imgItem.className;
+        var src = imgItem.getAttribute('src');
+        if (!src) {
+            imgItem.className = className + ' has-no-pic';
+            imgItem.setAttribute('alt', '');
+        } else {
+            imgItem.onerror = function(e) {
+                imgItem.className = className + ' has-error-pic';
+                imgItem.setAttribute('src', '');
+                imgItem.setAttribute('alt', '');
+            }
+        }
+    }
+});
+</script>
+<link rel="stylesheet" type="text/css" href="//ms0.meituan.net/piaofang/css/movie/celebritylist.135bd28f.css" />
+<title>演职人员-极速天使</title>
+</head>
+<body class="has-bar" data-ymd="">
+  <div id="wx_pic" style="display:none;">
+      <img src="//ms0.meituan.net/piaofang/img/wx_pic-daf3a7c4.png"/>
+  </div>
+  <header class="navBar ">
+  	<div class="nav-wrap-left">
+  		<a id="rank-back" data-com="hisBack" class="back">
+  			<i class="text-icon icon-back"></i>
+  		</a>
+  	</div>
+      <h1 class="nav-header navBarTitle">演职人员-极速天使</h1>
+  </header>
+  <div class="sticky-container">
+    <div class="scroller cat-wrapper">
+      <div class="wrapper cat-content">
+          <div class="panel-wrapper" id="panelWrapper">
+            <dl class="panel-main category">
+              <dt class="panel-header sticky-wrapper">
+                <div class="panel-title need-sticky more-up" data-index="0">
+                  <span class="title-left">
+                    <span class="title-name">导演</span>
+                    <em class="title-count">(1)</em></span>
+                  <span class="panel-arrow"></span>
+                </div>
+              </dt>
+              <dd class="panel-content" >
+                <div class="panel-c">
+                    <div class="p-item">
+                        <a href="/celebrity/31127" class="p-link" data-id="31127">
+                          <div class="p-item-m p-item-left lazyload default_celebrity" data-src="//p0.meituan.net/movie/4378810642eef1c77b8b33e77dd2a70645491.jpg@120w_172h">
+                            
+                          </div>
+                          <div class="p-desc">
+                              <p class="p-item-name ellipsis-1">马楚成</p>
+                              <p class="p-item-e-name ellipsis-1">Jingle Ma</p>
+                          </div>
+                        </a>
+                    </div>
+                </div>
+              </dd>
+            </dl>
+            <dl class="panel-main category">
+              <dt class="panel-header sticky-wrapper">
+                <div class="panel-title need-sticky more-down" data-index="1">
+                  <span class="title-left">
+                    <span class="title-name">演员</span>
+                    <em class="title-count">(21)</em></span>
+                  <span class="panel-arrow"></span>
+                </div>
+              </dt>
+              <dd class="panel-content" style="display:none;">
+                <div class="panel-c">
+                    <div class="p-item">
+                        <a href="/celebrity/17362" class="p-link" data-id="17362">
+                          <div class="p-item-m p-item-left lazyload default_celebrity" data-src="//p0.meituan.net/movie/903898bc4e631a83bad9411843dc4f5240186.jpg@120w_172h">
+                            
+                          </div>
+                          <div class="p-desc">
+                              <p class="p-item-name ellipsis-1">刘若英</p>
+                              <p class="p-item-e-name ellipsis-1">Rene Liu</p>
+                              <p class="p-item-play ellipsis-1">饰：韩冰</p>
+                          </div>
+                        </a>
+                    </div>
+                    <div class="p-item">
+                        <a href="/celebrity/28361" class="p-link" data-id="28361">
+                          <div class="p-item-m p-item-left lazyload default_celebrity" data-src="//p1.meituan.net/movie/a54a83b98a1f0ed2bac65132314ab10933280.jpg@120w_172h">
+                            
+                          </div>
+                          <div class="p-desc">
+                              <p class="p-item-name ellipsis-1">汤唯</p>
+                              <p class="p-item-e-name ellipsis-1">Wei Tang</p>
+                              <p class="p-item-play ellipsis-1">饰：洪小依</p>
+                          </div>
+                        </a>
+                    </div>
+                    <div class="p-item">
+                        <a href="/celebrity/7668" class="p-link" data-id="7668">
+                          <div class="p-item-m p-item-left lazyload default_celebrity" data-src="//p0.meituan.net/movie/309e7496615ff38f62841149082b728936043.jpg@120w_172h">
+                            
+                          </div>
+                          <div class="p-desc">
+                              <p class="p-item-name ellipsis-1">林志颖</p>
+                              <p class="p-item-e-name ellipsis-1">Jimmy Lin</p>
+                              <p class="p-item-play ellipsis-1">饰：阿祖</p>
+                          </div>
+                        </a>
+                    </div>
+                    <div class="p-item">
+                        <a href="/celebrity/18196" class="p-link" data-id="18196">
+                          <div class="p-item-m p-item-left lazyload default_celebrity" data-src="//p0.meituan.net/movie/f143f50f2996f243bcef1c3d94f26fb335147.jpg@120w_172h">
+                            
+                          </div>
+                          <div class="p-desc">
+                              <p class="p-item-name ellipsis-1">韩载硕</p>
+                              <p class="p-item-e-name ellipsis-1">Jae-seok Han</p>
+                              <p class="p-item-play ellipsis-1">饰：高峰</p>
+                          </div>
+                        </a>
+                    </div>
+                    <div class="p-item">
+                        <a href="/celebrity/5871" class="p-link" data-id="5871">
+                          <div class="p-item-m p-item-left lazyload default_celebrity" data-src="//p0.meituan.net/movie/78b9197bc6f01d71ecb0a72d608e2b6239082.jpg@120w_172h">
+                            
+                          </div>
+                          <div class="p-desc">
+                              <p class="p-item-name ellipsis-1">张柏芝</p>
+                              <p class="p-item-e-name ellipsis-1">Cecilia Cheung</p>
+                              <p class="p-item-play ellipsis-1">饰：游镁</p>
+                          </div>
+                        </a>
+                    </div>
+                    <div class="p-item">
+                        <a href="/celebrity/8757" class="p-link" data-id="8757">
+                          <div class="p-item-m p-item-left lazyload default_celebrity" data-src="//p0.meituan.net/movie/47bfa9f5e16d20464edc95d1d108e83674464.jpg@120w_172h">
+                            
+                          </div>
+                          <div class="p-desc">
+                              <p class="p-item-name ellipsis-1">程伊</p>
+                              <p class="p-item-e-name ellipsis-1">Yi Cheng</p>
+                              <p class="p-item-play ellipsis-1">饰：芝芝</p>
+                          </div>
+                        </a>
+                    </div>
+                    <div class="p-item">
+                        <a href="/celebrity/28903" class="p-link" data-id="28903">
+                          <div class="p-item-m p-item-left lazyload default_celebrity" data-src="//p1.meituan.net/movie/e19ddf1c3a16d2d833450cd55451eec733692.jpg@120w_172h">
+                            
+                          </div>
+                          <div class="p-desc">
+                              <p class="p-item-name ellipsis-1">田中千绘</p>
+                              <p class="p-item-e-name ellipsis-1">Chie Tanaka</p>
+                              <p class="p-item-play ellipsis-1">饰：纱野嘉</p>
+                          </div>
+                        </a>
+                    </div>
+                    <div class="p-item">
+                        <a href="/celebrity/9214" class="p-link" data-id="9214">
+                          <div class="p-item-m p-item-left lazyload default_celebrity" data-src="//p0.meituan.net/movie/492dcf634948adbfa6481f3036b8fdbd55461.jpg@120w_172h">
+                            
+                          </div>
+                          <div class="p-desc">
+                              <p class="p-item-name ellipsis-1">郑佩佩</p>
+                              <p class="p-item-e-name ellipsis-1">Pei-pei Cheng</p>
+                              <p class="p-item-play ellipsis-1">饰：梅超芬</p>
+                          </div>
+                        </a>
+                    </div>
+                    <div class="p-item">
+                        <a href="/celebrity/10451" class="p-link" data-id="10451">
+                          <div class="p-item-m p-item-left lazyload default_celebrity" data-src="//p0.meituan.net/movie/9446c2cae145bdc572022937e1571cce38447.jpg@120w_172h">
+                            
+                          </div>
+                          <div class="p-desc">
+                              <p class="p-item-name ellipsis-1">北村一辉</p>
+                              <p class="p-item-e-name ellipsis-1">Kazuki Kitamura</p>
+                              <p class="p-item-play ellipsis-1">饰：浅野,鬼冢</p>
+                          </div>
+                        </a>
+                    </div>
+                    <div class="p-item">
+                        <a href="/celebrity/1294" class="p-link" data-id="1294">
+                          <div class="p-item-m p-item-left lazyload default_celebrity" data-src="//p0.meituan.net/movie/6dddbe258f2a90738b66f37377b2541246141.jpg@120w_172h">
+                            
+                          </div>
+                          <div class="p-desc">
+                              <p class="p-item-name ellipsis-1">姜武</p>
+                              <p class="p-item-e-name ellipsis-1">Wu Jiang</p>
+                              <p class="p-item-play ellipsis-1">饰：洪小依父亲</p>
+                          </div>
+                        </a>
+                    </div>
+                    <div class="p-item">
+                        <a href="/celebrity/28996" class="p-link" data-id="28996">
+                          <div class="p-item-m p-item-left lazyload default_celebrity" data-src="//p1.meituan.net/movie/ef9a48c66956e75bf4b9ec3afbf1819433638.jpg@120w_172h">
+                            
+                          </div>
+                          <div class="p-desc">
+                              <p class="p-item-name ellipsis-1">何炅</p>
+                              <p class="p-item-e-name ellipsis-1">Jiong He</p>
+                              <p class="p-item-play ellipsis-1">饰：何其威</p>
+                          </div>
+                        </a>
+                    </div>
+                    <div class="p-item">
+                        <a href="/celebrity/423139" class="p-link" data-id="423139">
+                          <div class="p-item-m p-item-left lazyload default_celebrity" data-src="//p1.meituan.net/movie/8e91e656eed697ba7c49d0928de65e2525780.jpg@120w_172h">
+                            
+                          </div>
+                          <div class="p-desc">
+                              <p class="p-item-name ellipsis-1">朱泳腾</p>
+                              <p class="p-item-e-name ellipsis-1">Yongteng Zhu</p>
+                              <p class="p-item-play ellipsis-1">饰：纱野嘉新郎</p>
+                          </div>
+                        </a>
+                    </div>
+                    <div class="p-item">
+                        <a href="/celebrity/1377" class="p-link" data-id="1377">
+                          <div class="p-item-m p-item-left lazyload default_celebrity" data-src="//p0.meituan.net/movie/b227747110c6cffba4dd77a8de886acb421978.png@120w_172h">
+                            
+                          </div>
+                          <div class="p-desc">
+                              <p class="p-item-name ellipsis-1">闵春晓</p>
+                              <p class="p-item-e-name ellipsis-1">Chunxiao Min</p>
+                              <p class="p-item-play ellipsis-1">饰：新闻发布会主持人</p>
+                          </div>
+                        </a>
+                    </div>
+                    <div class="p-item">
+                        <a href="/celebrity/1018890" class="p-link" data-id="1018890">
+                          <div class="p-item-m p-item-left lazyload default_celebrity" data-src="//p1.meituan.net/movie/c7c30b8c92abee9bbfd1c9b2e8a297a74221.jpg@120w_172h">
+                            
+                          </div>
+                          <div class="p-desc">
+                              <p class="p-item-name ellipsis-1">李欣露</p>
+                              <p class="p-item-play ellipsis-1">饰：阿卡</p>
+                          </div>
+                        </a>
+                    </div>
+                    <div class="p-item">
+                        <a href="/celebrity/1018891" class="p-link" data-id="1018891">
+                          <div class="p-item-m p-item-left lazyload default_celebrity" data-src="//p1.meituan.net/movie/c7c30b8c92abee9bbfd1c9b2e8a297a74221.jpg@120w_172h">
+                            
+                          </div>
+                          <div class="p-desc">
+                              <p class="p-item-name ellipsis-1">周鸿才</p>
+                              <p class="p-item-play ellipsis-1">饰：赛事总监</p>
+                          </div>
+                        </a>
+                    </div>
+                    <div class="p-item">
+                        <a href="/celebrity/1018892" class="p-link" data-id="1018892">
+                          <div class="p-item-m p-item-left lazyload default_celebrity" data-src="//p0.meituan.net/movie/d731b36430abb0b5290ac4876f65f14734858.jpg@120w_172h">
+                            
+                          </div>
+                          <div class="p-desc">
+                              <p class="p-item-name ellipsis-1">李广旭</p>
+                              <p class="p-item-play ellipsis-1">饰：程哥</p>
+                          </div>
+                        </a>
+                    </div>
+                    <div class="p-item">
+                        <a href="/celebrity/1018893" class="p-link" data-id="1018893">
+                          <div class="p-item-m p-item-left lazyload default_celebrity" data-src="//p1.meituan.net/movie/c7c30b8c92abee9bbfd1c9b2e8a297a74221.jpg@120w_172h">
+                            
+                          </div>
+                          <div class="p-desc">
+                              <p class="p-item-name ellipsis-1">张蓉姝</p>
+                              <p class="p-item-play ellipsis-1">饰：韩冰妹妹</p>
+                          </div>
+                        </a>
+                    </div>
+                    <div class="p-item">
+                        <a href="/celebrity/1018894" class="p-link" data-id="1018894">
+                          <div class="p-item-m p-item-left lazyload default_celebrity" data-src="//p1.meituan.net/movie/c7c30b8c92abee9bbfd1c9b2e8a297a74221.jpg@120w_172h">
+                            
+                          </div>
+                          <div class="p-desc">
+                              <p class="p-item-name ellipsis-1">Leah</p>
+                              <p class="p-item-play ellipsis-1">饰：心理医生</p>
+                          </div>
+                        </a>
+                    </div>
+                    <div class="p-item">
+                        <a href="/celebrity/1018895" class="p-link" data-id="1018895">
+                          <div class="p-item-m p-item-left lazyload default_celebrity" data-src="//p1.meituan.net/movie/c7c30b8c92abee9bbfd1c9b2e8a297a74221.jpg@120w_172h">
+                            
+                          </div>
+                          <div class="p-desc">
+                              <p class="p-item-name ellipsis-1">泰吏</p>
+                              <p class="p-item-play ellipsis-1">饰：横山</p>
+                          </div>
+                        </a>
+                    </div>
+                    <div class="p-item">
+                        <a href="/celebrity/1018896" class="p-link" data-id="1018896">
+                          <div class="p-item-m p-item-left lazyload default_celebrity" data-src="//p1.meituan.net/movie/c7c30b8c92abee9bbfd1c9b2e8a297a74221.jpg@120w_172h">
+                            
+                          </div>
+                          <div class="p-desc">
+                              <p class="p-item-name ellipsis-1">徐显辉</p>
+                              <p class="p-item-play ellipsis-1">饰：王警官</p>
+                          </div>
+                        </a>
+                    </div>
+                    <div class="p-item">
+                        <a href="/celebrity/1018897" class="p-link" data-id="1018897">
+                          <div class="p-item-m p-item-left lazyload default_celebrity" data-src="//p0.meituan.net/movie/a5c5b9bbd2c464cee47e780e64eba6ce29913.jpg@120w_172h">
+                            
+                          </div>
+                          <div class="p-desc">
+                              <p class="p-item-name ellipsis-1">肖逾榛</p>
+                              <p class="p-item-e-name ellipsis-1">Yuzhen Xiao</p>
+                              <p class="p-item-play ellipsis-1">饰：童年洪小依</p>
+                          </div>
+                        </a>
+                    </div>
+                </div>
+              </dd>
+            </dl>
+            <dl class="panel-main category">
+              <dt class="panel-header sticky-wrapper">
+                <div class="panel-title need-sticky more-down" data-index="2">
+                  <span class="title-left">
+                    <span class="title-name">编剧</span>
+                    <em class="title-count">(3)</em></span>
+                  <span class="panel-arrow"></span>
+                </div>
+              </dt>
+              <dd class="panel-content" style="display:none;">
+                <div class="panel-c">
+                    <div class="p-item">
+                        <a href="/celebrity/476579" class="p-link" data-id="476579">
+                          <div class="p-item-m p-item-left lazyload default_celebrity" data-src="//p1.meituan.net/movie/5c83c0c0b3fed5c122b16e9e72b4116e276210.jpg@120w_172h">
+                            
+                          </div>
+                          <div class="p-desc">
+                              <p class="p-item-name ellipsis-1">陈舒</p>
+                              <p class="p-item-e-name ellipsis-1">Shu Chen</p>
+                          </div>
+                        </a>
+                    </div>
+                    <div class="p-item">
+                        <a href="/celebrity/31127" class="p-link" data-id="31127">
+                          <div class="p-item-m p-item-left lazyload default_celebrity" data-src="//p0.meituan.net/movie/4378810642eef1c77b8b33e77dd2a70645491.jpg@120w_172h">
+                            
+                          </div>
+                          <div class="p-desc">
+                              <p class="p-item-name ellipsis-1">马楚成</p>
+                              <p class="p-item-e-name ellipsis-1">Jingle Ma</p>
+                          </div>
+                        </a>
+                    </div>
+                    <div class="p-item">
+                        <a href="/celebrity/1470704" class="p-link" data-id="1470704">
+                          <div class="p-item-m p-item-left lazyload default_celebrity" data-src="//p1.meituan.net/movie/c7c30b8c92abee9bbfd1c9b2e8a297a74221.jpg@120w_172h">
+                            
+                          </div>
+                          <div class="p-desc">
+                              <p class="p-item-name ellipsis-1">Miro Wang</p>
+                          </div>
+                        </a>
+                    </div>
+                </div>
+              </dd>
+            </dl>
+            <dl class="panel-main category">
+              <dt class="panel-header sticky-wrapper">
+                <div class="panel-title need-sticky more-down" data-index="3">
+                  <span class="title-left">
+                    <span class="title-name">制片人</span>
+                    <em class="title-count">(9)</em></span>
+                  <span class="panel-arrow"></span>
+                </div>
+              </dt>
+              <dd class="panel-content" style="display:none;">
+                <div class="panel-c">
+                    <div class="p-item">
+                        <a href="/celebrity/856776" class="p-link" data-id="856776">
+                          <div class="p-item-m p-item-left lazyload default_celebrity" data-src="//p1.meituan.net/movie/c7c30b8c92abee9bbfd1c9b2e8a297a74221.jpg@120w_172h">
+                            
+                          </div>
+                          <div class="p-desc">
+                              <p class="p-item-name ellipsis-1">阎彬</p>
+                              <p class="p-item-e-name ellipsis-1">Bin Yan</p>
+                          </div>
+                        </a>
+                    </div>
+                    <div class="p-item">
+                        <a href="/celebrity/856775" class="p-link" data-id="856775">
+                          <div class="p-item-m p-item-left lazyload default_celebrity" data-src="//p1.meituan.net/movie/8459a7f2abf8b016eaa082e7d5c7de9343683.jpg@120w_172h">
+                            
+                          </div>
+                          <div class="p-desc">
+                              <p class="p-item-name ellipsis-1">王一淳</p>
+                              <p class="p-item-e-name ellipsis-1">Yichun Wang</p>
+                          </div>
+                        </a>
+                    </div>
+                    <div class="p-item">
+                        <a href="/celebrity/28202" class="p-link" data-id="28202">
+                          <div class="p-item-m p-item-left lazyload default_celebrity" data-src="//p0.meituan.net/movie/883f6a3fff4e153d89a9f392c872bd0646382.jpg@120w_172h">
+                            
+                          </div>
+                          <div class="p-desc">
+                              <p class="p-item-name ellipsis-1">王长田</p>
+                              <p class="p-item-e-name ellipsis-1">Changtian Wang</p>
+                          </div>
+                        </a>
+                    </div>
+                    <div class="p-item">
+                        <a href="/celebrity/856772" class="p-link" data-id="856772">
+                          <div class="p-item-m p-item-left lazyload default_celebrity" data-src="//p1.meituan.net/movie/c7c30b8c92abee9bbfd1c9b2e8a297a74221.jpg@120w_172h">
+                            
+                          </div>
+                          <div class="p-desc">
+                              <p class="p-item-name ellipsis-1">于华锋</p>
+                              <p class="p-item-e-name ellipsis-1">Hua-feng Yu</p>
+                          </div>
+                        </a>
+                    </div>
+                    <div class="p-item">
+                        <a href="/celebrity/845566" class="p-link" data-id="845566">
+                          <div class="p-item-m p-item-left lazyload default_celebrity" data-src="//p1.meituan.net/movie/c7c30b8c92abee9bbfd1c9b2e8a297a74221.jpg@120w_172h">
+                            
+                          </div>
+                          <div class="p-desc">
+                              <p class="p-item-name ellipsis-1">侯继东</p>
+                              <p class="p-item-e-name ellipsis-1">Jidong Hou</p>
+                          </div>
+                        </a>
+                    </div>
+                    <div class="p-item">
+                        <a href="/celebrity/798443" class="p-link" data-id="798443">
+                          <div class="p-item-m p-item-left lazyload default_celebrity" data-src="//p0.meituan.net/movie/4258c0fe870b8e1aa0e16bdd7ab4190227804.jpg@120w_172h">
+                            
+                          </div>
+                          <div class="p-desc">
+                              <p class="p-item-name ellipsis-1">李晓萍</p>
+                              <p class="p-item-e-name ellipsis-1">Xiaoping Li</p>
+                          </div>
+                        </a>
+                    </div>
+                    <div class="p-item">
+                        <a href="/celebrity/786474" class="p-link" data-id="786474">
+                          <div class="p-item-m p-item-left lazyload default_celebrity" data-src="//p1.meituan.net/movie/9fb510d9d816f24be946830e7d3015cd31804.jpg@120w_172h">
+                            
+                          </div>
+                          <div class="p-desc">
+                              <p class="p-item-name ellipsis-1">芦涛</p>
+                              <p class="p-item-e-name ellipsis-1">Tao Lu</p>
+                          </div>
+                        </a>
+                    </div>
+                    <div class="p-item">
+                        <a href="/celebrity/29420" class="p-link" data-id="29420">
+                          <div class="p-item-m p-item-left lazyload default_celebrity" data-src="//p0.meituan.net/movie/__41742326__3974868.jpg@120w_172h">
+                            
+                          </div>
+                          <div class="p-desc">
+                              <p class="p-item-name ellipsis-1">徐林</p>
+                              <p class="p-item-e-name ellipsis-1">Lin Xu</p>
+                          </div>
+                        </a>
+                    </div>
+                    <div class="p-item">
+                        <a href="/celebrity/856770" class="p-link" data-id="856770">
+                          <div class="p-item-m p-item-left lazyload default_celebrity" data-src="//p1.meituan.net/movie/c7c30b8c92abee9bbfd1c9b2e8a297a74221.jpg@120w_172h">
+                            
+                          </div>
+                          <div class="p-desc">
+                              <p class="p-item-name ellipsis-1">冯铁林</p>
+                              <p class="p-item-e-name ellipsis-1">Tie-lin Feng</p>
+                          </div>
+                        </a>
+                    </div>
+                </div>
+              </dd>
+            </dl>
+            <dl class="panel-main category">
+              <dt class="panel-header sticky-wrapper">
+                <div class="panel-title need-sticky more-down" data-index="4">
+                  <span class="title-left">
+                    <span class="title-name">音乐</span>
+                    <em class="title-count">(1)</em></span>
+                  <span class="panel-arrow"></span>
+                </div>
+              </dt>
+              <dd class="panel-content" style="display:none;">
+                <div class="panel-c">
+                    <div class="p-item">
+                        <a href="/celebrity/28216" class="p-link" data-id="28216">
+                          <div class="p-item-m p-item-left lazyload default_celebrity" data-src="//p1.meituan.net/movie/7866d12a3bef3e01294d94b729ca8bc231597.jpg@120w_172h">
+                            
+                          </div>
+                          <div class="p-desc">
+                              <p class="p-item-name ellipsis-1">金培达</p>
+                              <p class="p-item-e-name ellipsis-1">Peter Kam</p>
+                          </div>
+                        </a>
+                    </div>
+                </div>
+              </dd>
+            </dl>
+            <dl class="panel-main category">
+              <dt class="panel-header sticky-wrapper">
+                <div class="panel-title need-sticky more-down" data-index="5">
+                  <span class="title-left">
+                    <span class="title-name">摄影师</span>
+                    <em class="title-count">(3)</em></span>
+                  <span class="panel-arrow"></span>
+                </div>
+              </dt>
+              <dd class="panel-content" style="display:none;">
+                <div class="panel-c">
+                    <div class="p-item">
+                        <a href="/celebrity/482950" class="p-link" data-id="482950">
+                          <div class="p-item-m p-item-left lazyload default_celebrity" data-src="//p1.meituan.net/movie/c7c30b8c92abee9bbfd1c9b2e8a297a74221.jpg@120w_172h">
+                            
+                          </div>
+                          <div class="p-desc">
+                              <p class="p-item-name ellipsis-1">张东亮</p>
+                              <p class="p-item-e-name ellipsis-1">Tony Cheung</p>
+                          </div>
+                        </a>
+                    </div>
+                    <div class="p-item">
+                        <a href="/celebrity/392407" class="p-link" data-id="392407">
+                          <div class="p-item-m p-item-left lazyload default_celebrity" data-src="//p0.meituan.net/movie/c01acd9e893f743d360e3b8e08270d7d763575.jpg@120w_172h">
+                            
+                          </div>
+                          <div class="p-desc">
+                              <p class="p-item-name ellipsis-1">陈志英</p>
+                              <p class="p-item-e-name ellipsis-1">Chi Ying Chan</p>
+                          </div>
+                        </a>
+                    </div>
+                    <div class="p-item">
+                        <a href="/celebrity/504831" class="p-link" data-id="504831">
+                          <div class="p-item-m p-item-left lazyload default_celebrity" data-src="//p1.meituan.net/movie/c7c30b8c92abee9bbfd1c9b2e8a297a74221.jpg@120w_172h">
+                            
+                          </div>
+                          <div class="p-desc">
+                              <p class="p-item-name ellipsis-1">陈国雄</p>
+                              <p class="p-item-e-name ellipsis-1">Guo Xiong Chen</p>
+                          </div>
+                        </a>
+                    </div>
+                </div>
+              </dd>
+            </dl>
+            <dl class="panel-main category">
+              <dt class="panel-header sticky-wrapper">
+                <div class="panel-title need-sticky more-down" data-index="6">
+                  <span class="title-left">
+                    <span class="title-name">剪辑师</span>
+                    <em class="title-count">(2)</em></span>
+                  <span class="panel-arrow"></span>
+                </div>
+              </dt>
+              <dd class="panel-content" style="display:none;">
+                <div class="panel-c">
+                    <div class="p-item">
+                        <a href="/celebrity/28819" class="p-link" data-id="28819">
+                          <div class="p-item-m p-item-left lazyload default_celebrity" data-src="//p1.meituan.net/movie/0c568899c25da99e9215ec53568c279d120193.jpg@120w_172h">
+                            
+                          </div>
+                          <div class="p-desc">
+                              <p class="p-item-name ellipsis-1">邝志良</p>
+                              <p class="p-item-e-name ellipsis-1">Chi Leung Kwong</p>
+                          </div>
+                        </a>
+                    </div>
+                    <div class="p-item">
+                        <a href="/celebrity/856769" class="p-link" data-id="856769">
+                          <div class="p-item-m p-item-left lazyload default_celebrity" data-src="//p1.meituan.net/movie/c7c30b8c92abee9bbfd1c9b2e8a297a74221.jpg@120w_172h">
+                            
+                          </div>
+                          <div class="p-desc">
+                              <p class="p-item-name ellipsis-1">黄海</p>
+                              <p class="p-item-e-name ellipsis-1">Hai Huang</p>
+                          </div>
+                        </a>
+                    </div>
+                </div>
+              </dd>
+            </dl>
+            <dl class="panel-main category">
+              <dt class="panel-header sticky-wrapper">
+                <div class="panel-title need-sticky more-down" data-index="7">
+                  <span class="title-left">
+                    <span class="title-name">美术指导</span>
+                    <em class="title-count">(1)</em></span>
+                  <span class="panel-arrow"></span>
+                </div>
+              </dt>
+              <dd class="panel-content" style="display:none;">
+                <div class="panel-c">
+                    <div class="p-item">
+                        <a href="/celebrity/402016" class="p-link" data-id="402016">
+                          <div class="p-item-m p-item-left lazyload default_celebrity" data-src="//p1.meituan.net/movie/c7c30b8c92abee9bbfd1c9b2e8a297a74221.jpg@120w_172h">
+                            
+                          </div>
+                          <div class="p-desc">
+                              <p class="p-item-name ellipsis-1">莫少宗</p>
+                              <p class="p-item-e-name ellipsis-1">Alex Mok</p>
+                          </div>
+                        </a>
+                    </div>
+                </div>
+              </dd>
+            </dl>
+            <dl class="panel-main category">
+              <dt class="panel-header sticky-wrapper">
+                <div class="panel-title need-sticky more-down" data-index="8">
+                  <span class="title-left">
+                    <span class="title-name">服装师</span>
+                    <em class="title-count">(1)</em></span>
+                  <span class="panel-arrow"></span>
+                </div>
+              </dt>
+              <dd class="panel-content" style="display:none;">
+                <div class="panel-c">
+                    <div class="p-item">
+                        <a href="/celebrity/481618" class="p-link" data-id="481618">
+                          <div class="p-item-m p-item-left lazyload default_celebrity" data-src="//p0.meituan.net/movie/e9b2286953133a4f54739efa7c4a3b4c15722.jpg@120w_172h">
+                            
+                          </div>
+                          <div class="p-desc">
+                              <p class="p-item-name ellipsis-1">Joseph A. Porro</p>
+                              <p class="p-item-e-name ellipsis-1">Joseph A. Porro</p>
+                          </div>
+                        </a>
+                    </div>
+                </div>
+              </dd>
+            </dl>
+            <dl class="panel-main category">
+              <dt class="panel-header sticky-wrapper">
+                <div class="panel-title need-sticky more-down" data-index="9">
+                  <span class="title-left">
+                    <span class="title-name">武术指导</span>
+                    <em class="title-count">(1)</em></span>
+                  <span class="panel-arrow"></span>
+                </div>
+              </dt>
+              <dd class="panel-content" style="display:none;">
+                <div class="panel-c">
+                    <div class="p-item">
+                        <a href="/celebrity/29690" class="p-link" data-id="29690">
+                          <div class="p-item-m p-item-left lazyload default_celebrity" data-src="//p0.meituan.net/movie/b923bdb61fb9eba907829e7d3fe4ad0a31595.jpg@120w_172h">
+                            
+                          </div>
+                          <div class="p-desc">
+                              <p class="p-item-name ellipsis-1">李忠志</p>
+                              <p class="p-item-e-name ellipsis-1">Nicky Li Chung-Chi</p>
+                          </div>
+                        </a>
+                    </div>
+                </div>
+              </dd>
+            </dl>
+          </div>
+        <section>
+            <div id="download">
+                <div class="dl-cont">
+                    <img class="dl-img" src="//ms0.meituan.net/piaofang/img/download-icon-dd2726df.png">
+                    <div class="dl-desc">
+                        <h3 class="dl-title">
+                            猫眼专业版
+                        </h3>
+                        <p class="dl-txt">
+                           秒级实时票房随时看
+                        </p>
+                    </div>
+                </div>
+                <a class="dl-action" href="/app">立即下载</a>
+                <script>
+                    var clientType = '普通浏览器';
+            
+                    if (false) clientType = '猫眼App';
+                    if (false) clientType = '团购App';
+            
+                    document.querySelector('.dl-action').addEventListener('touchstart', function() {
+                        logger('_trackEvent', '下载贴条', '下载', clientType);
+                    });
+                </script>
+            </div>
+        </section>
+      </div>
+    </div>
+  </div>
+  <input type="hidden" name="name" value="33" id="movieId" />
+  <div class="shareTitle" style="display:none;"></div>
+<script>
+var __limitFeature = 'false';
+//bfcache
+window.addEventListener('pageshow',function (ev){
+    if (ev.persisted) {
+        window.location.reload();
+    }
+});
+</script>
+<script>
+    !function(e,n,t,o){function r(){return a._LXALogNTObject?"hybrid":o?o:/\b(mobile|iphone|htc)\b/gi.test(b)?"mobile":"web"}var a=window,i=document,c="_MeiTuanALogObject";if(a[c]=t,!a[t]){var s=function(){return s.q.push(arguments),s};s.q=s.q||[],s.v=n,s.l=+new Date,s.C=o,a[t]=a[t]||s;var u=i.getElementsByTagName("head")[0],l=i.createElement("script"),b=navigator.userAgent.toLocaleLowerCase(),g=r(),d="";d=e.length-3===e.indexOf(".js")?e:["//",e,"/source/",n,"/",g,".","js"].join(""),l.defer=l.async=!0,l.charset="utf-8",l.src=d,l.onload=l.onerror=function(){},u.appendChild(l)}}("analytics.meituan.com","stable","Analytics","");
+    Analytics('config', 'appnm', 'moviepro');
+    Analytics('config', 'ct', 'i');
+    Analytics('config', 'autoUrlEnv', true)
+    Analytics('use', 'moviepro');
+    Analytics('set', 'cid', '全部演职人员二级页');
+    Analytics('send', 'pv', '全部演职人员二级页');
+</script>
+
+<script>
+var isDev=false;
+var requirejs = {};
+
+requirejs.__require = [];
+var require = function() {
+    requirejs.__require.push(arguments);
+};
+
+    var sRev = {"biz/movie/celebritylist.js":"2b009be9","lib/zepto.js":"f039f967","component/panel.js":"66e89608","util/env.js":"0bec12b4","util/scroller/scroller.js":"50c4a62e","util/debounce.js":"8c472d50","util/listener.js":"f4bc587e","util/scroller/translate.js":"3b97bf73","util/scroller/indicator.js":"946d7c30","util/scroller/ease.js":"8fbbd863","util/scroller/dom-resize.js":"f4924b4a","util/raf.js":"e8c3592a","lib/fastclick.js":"1a6b078c","util/cat-sticky.js":"d35ef44e","component/lazyLoad/lazyLoad.js":"8c88d7a1","util/xnb.js":"99f63fe0","lib/mtnb.js":"b3fc02ad","lib/wechat.js":"2044fc41","util/nAjax.js":"ba169296","util/tools.js":"7061807c","util/cookie.js":"e4b7df3e","lib/declareable.js":"dfe43e7d","lib/count.js":"9d05610d","util/gaConfig.js":"81afe990","util/canTouch.js":"998c9c42","util/dateBar.js":"557ec72c","util/calendar.js":"03f83732","util/calendar/renderMonth.js":"719d8e36","util/calendar/decorator/festival.js":"6c87b7e8","lib/solarlunar.js":"1ce10dc9","util/calendar/decorator/marketing.js":"a9c96b9c","util/weeklist.js":"7c24ddbd","util/calendar/dateArea.js":"e9f55f2d","component/toast.js":"b235a4c0","util/calendar/dateSelectDay.js":"c875a960","bridge/calendar.js":"20f6b87f","util/hrefTo.js":"cb7d28ae","util/hisBack.js":"80eb97c7","util/cityBar.js":"67bb8de0","bridge/citylist.js":"88f93561","util/knb-helper.js":"139483d9","util/cityBox.js":"ebb2cd42","util/query.js":"e01798f5","util/searchInput.js":"e7f03e59","util/slider.js":"1eeebc82","lib/swipe.js":"a0e51ec2","util/lazyload.js":"038b9c8d","util/tab.js":"ed26d156","util/gotoTop.js":"edf416a1","util/uploadIdcard.js":"81a04790","util/switchbutton.js":"f97c7514","util/eventHandler.js":"a26f33a8","util/xslider.js":"59b24cd0","util/wheellist.js":"1a7d2f79","util/twowayTable.js":"df7253d5"};
+    var sDep = {"biz/movie/celebritylist.js":["lib/zepto.js","component/panel.js","util/xnb.js","util/tools.js"],"component/panel.js":["lib/zepto.js","util/env.js","util/scroller/scroller.js","lib/fastclick.js","util/cat-sticky.js","component/lazyLoad/lazyLoad.js"],"util/scroller/scroller.js":["lib/zepto.js","util/debounce.js","util/listener.js","util/scroller/translate.js","util/scroller/indicator.js","util/scroller/ease.js","util/scroller/dom-resize.js","util/raf.js","util/env.js"],"util/scroller/translate.js":["lib/zepto.js","util/listener.js"],"util/scroller/indicator.js":["lib/zepto.js","util/scroller/translate.js","util/debounce.js"],"util/scroller/ease.js":["lib/zepto.js"],"util/scroller/dom-resize.js":["lib/zepto.js"],"util/cat-sticky.js":["util/raf.js","util/env.js"],"component/lazyLoad/lazyLoad.js":["lib/zepto.js","util/raf.js"],"util/xnb.js":["lib/mtnb.js","lib/wechat.js","util/nAjax.js","util/env.js","util/tools.js","util/cookie.js"],"util/nAjax.js":["lib/zepto.js","util/tools.js","util/cookie.js"],"util/tools.js":["lib/zepto.js"],"lib/declareable.js":["lib/zepto.js"],"util/gaConfig.js":["lib/zepto.js"],"util/canTouch.js":["lib/zepto.js"],"util/dateBar.js":["lib/zepto.js","util/calendar.js","util/tools.js"],"util/calendar.js":["lib/zepto.js","util/calendar/renderMonth.js","util/weeklist.js","util/calendar/dateArea.js","util/calendar/dateSelectDay.js","util/cat-sticky.js","bridge/calendar.js"],"util/calendar/renderMonth.js":["lib/zepto.js","util/tools.js","util/calendar/decorator/festival.js","util/calendar/decorator/marketing.js"],"util/calendar/decorator/festival.js":["lib/solarlunar.js"],"util/calendar/dateArea.js":["lib/zepto.js","component/toast.js"],"component/toast.js":["lib/zepto.js"],"util/calendar/dateSelectDay.js":["lib/zepto.js","component/toast.js"],"bridge/calendar.js":["lib/zepto.js","util/env.js","util/xnb.js"],"util/hrefTo.js":["lib/zepto.js"],"util/cityBar.js":["lib/zepto.js","util/tools.js","util/nAjax.js","bridge/citylist.js"],"bridge/citylist.js":["lib/zepto.js","util/knb-helper.js","util/env.js","util/xnb.js"],"util/knb-helper.js":["lib/zepto.js","util/tools.js"],"util/cityBox.js":["lib/zepto.js","util/query.js"],"util/slider.js":["lib/zepto.js","lib/swipe.js","util/lazyload.js","util/tools.js"],"util/lazyload.js":["lib/zepto.js"],"util/tab.js":["lib/zepto.js"],"util/uploadIdcard.js":["lib/zepto.js","util/nAjax.js","util/env.js","util/xnb.js","component/toast.js"],"util/switchbutton.js":["lib/zepto.js","util/eventHandler.js"],"util/eventHandler.js":["lib/zepto.js"],"util/xslider.js":["lib/zepto.js"],"util/wheellist.js":["lib/zepto.js"],"util/twowayTable.js":["lib/zepto.js","util/env.js","util/scroller/scroller.js"]};
+    requirejs.__requirejsConfig = {
+        baseUrl:'//ms0.meituan.net/',
+        revision:sRev,
+        prefix: 'piaofang/js/',
+        cachePrefix: 'n~', 
+        combo: {
+            url: '//mc.meituan.net/combo/?f=',
+            deps:sDep
+        }
+    };
+</script>
+<script src="//ms0.meituan.net/piaofang/js/truck.702f89a9.js" id="truckjsnode" async></script>
+<script type="text/javascript">
+require(['lib/declareable.js','lib/count.js','util/gaConfig.js']);
+</script>
+<script>require(['biz/movie/celebritylist.js']);</script>
+</body>
+</html>

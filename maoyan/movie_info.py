@@ -6,11 +6,13 @@ import re
 from database import db
 import time
 import random
+import proxy_update
+
 
 def fetch_basic_info(mid):
     result = {'id':mid}
-    url = 'http://piaofang.maoyan.com/movie/%d'%mid
-    html = urllib.request.urlopen(url).read().decode('utf-8')
+    url = 'https://piaofang.maoyan.com/movie/%d'%mid
+    html = proxy_update.getHtmlViaProxy(url)
     with open('caches/%d_bas.html'%mid,'w') as f:
         f.write(html)
     soup = BeautifulSoup(html,'lxml')
@@ -38,15 +40,20 @@ def fetch_basic_info(mid):
             res3 = w.find(class_='info-sb-num')
             result['boxOffice_'+t1.group(1)+'_ratio'] = t1.group(2)
             result['boxOffice_'+t1.group(1)+'_num'] = "".join(map(lambda w:w.strip(),res3.strings))
-    #print(result)
-    db.maoyan_info.save(result)
+    res = db.maoyan_info.find_one({'id':result['id']})
+    if not res:
+        db.maoyan_info.save(result)
+    else:
+        print("Already Exist!")
+        exit()
     return "Success"
 
 
 def fetch_cel_info(mid):
-    url = 'http://piaofang.maoyan.com/movie/%d/celebritylist'%mid
+    url = 'https://piaofang.maoyan.com/movie/%d/celebritylist'%mid
     result = {'id':mid}
-    html = urllib.request.urlopen(url).read().decode('utf-8')
+    #html = urllib.request.urlopen(url).read().decode('utf-8')
+    html = proxy_update.getHtmlViaProxy(url)
     with open('caches/%d_cel.html'%mid,'w') as f:
         f.write(html)
     soup = BeautifulSoup(html,'lxml')
@@ -71,14 +78,16 @@ def fetch_cel_info(mid):
                 elist.append(item.string)
         result['elist'] = elist
         result['clist'] = clist
-        #print(result)
-        db.maoyan_cel_info.save(result)
+        if not db.maoyan_cel_info.find_one({'id':result['id'],'field':ptitle}):
+            db.maoyan_cel_info.save(result)
+        else:
+            print("Already Exist!")
     return "Success"
 
 def fetch_com_info(mid):
-    url = 'http://piaofang.maoyan.com/movie/%d/companylist'%mid
+    url = 'https://piaofang.maoyan.com/movie/%d/companylist'%mid
     result = {'id':mid}
-    html = urllib.request.urlopen(url).read().decode('utf-8')
+    html = proxy_update.getHtmlViaProxy(url)
     with open('caches/%d_com.html'%mid,'w') as f:
         f.write(html)
     soup = BeautifulSoup(html,'lxml')
@@ -98,13 +107,24 @@ def fetch_com_info(mid):
                 clist.append(item.string)
         result['list'] = clist
         #print(result)
-        db.maoyan_com_info.save(result)
+        if not db.maoyan_com_info.find_one({'id':result['id'],'field':ptitle}):
+            db.maoyan_com_info.save(result)
+        else:
+            print("Already Exist!")
     return "Success"
 
-def clean():
-    db.maoyan_com_info.remove({})
-    db.maoyan_cel_info.remove({})
-    db.maoyan_info.remove({})
+def clean(mid = None):
+    if mid == None:
+        db.maoyan_com_info.remove({})
+        db.maoyan_cel_info.remove({})
+        db.maoyan_info.remove({})
+        db.maoyan_status.remove({})
+    else:
+        db.maoyan_com_info.remove({'id':mid})
+        db.maoyan_cel_info.remove({'id':mid})
+        db.maoyan_info.remove({'id':mid})
+        db.maoyan_status.remove({'id':mid})
+
 
 
 if __name__ == "__main__":
@@ -117,9 +137,17 @@ if __name__ == "__main__":
                 print(func.__name__,"(%d)"%mid,"...",res)
                 if res == "Success":
                     break
-                time.sleep(random.randint(1,30))
+                if res == "Banned":
+                    time.sleep(random.randint(1,5))
+        if db.maoyan_status.find_one({'id':mid}):
+            print(mid,"Already Exist!")
+            mid += 1
+            continue
+        clean(mid)
         run(fetch_basic_info,mid)
         run(fetch_cel_info,mid)
         run(fetch_com_info,mid)
+        db.maoyan_status.save({'id':mid})
         print(mid)
         mid += 1
+        time.sleep(1)

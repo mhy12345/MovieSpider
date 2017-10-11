@@ -6,8 +6,9 @@ import threading
 import random
 import re
 import socket
+import proxy_update
 
-defaulttimeout = 10
+defaulttimeout = 3
 socket.setdefaulttimeout(defaulttimeout)
 ips = []
 lastTime = None
@@ -18,7 +19,7 @@ class ProxyPool:
         self.count = dict()
         self.resume()
         self.proxyTries = 3
-        self.pageTries = 3
+        self.pageTries = 5
         self.proxyAppends = 50
         self.minIpCount = 40
         self.checkPool()
@@ -38,20 +39,23 @@ class ProxyPool:
     def refillPool(self):
         socket.setdefaulttimeout(30)
         print("Refill Pool!")
-        #url = 'http://api.xdaili.cn/xdaili-api//greatRecharge/getGreatIp?spiderId=49b322eca329472c8f2becbf60001f11&orderno=MF20171060571UXYXmM&returnType=1&count=20'
-        url = 'http://http-webapi.zhimaruanjian.com/getip?num=%d&type=1&pro=&city=0&yys=0&port=11&pack=3386&ts=0&ys=0&cs=0&lb=1&sb=0&pb=4&mr=1'%self.proxyAppends
-        while True:
-            try:
-                txt = urllib.request.urlopen(url).read().decode('utf-8')
-            except urllib.error.URLError:
-                print('Little Sleep')
-                print(url)
-                time.sleep(15)
-                continue
-            break
-        if re.search('白名单',txt):
-            print("Ip is not in White List")
-            return
+        #url = 'http://http-webapi.zhimaruanjian.com/getip?num=%d&type=1&pro=&city=0&yys=0&port=11&pack=3386&ts=0&ys=0&cs=0&lb=1&sb=0&pb=4&mr=1'%self.proxyAppends
+        def xici():
+            return proxy_update.get_ips()
+        def zhima():
+            while True:
+                try:
+                    txt = urllib.request.urlopen(url).read().decode('utf-8')
+                except urllib.error.URLError:
+                    print('Little Sleep')
+                    print(url)
+                    time.sleep(15)
+                    continue
+                break
+            if re.search('白名单',txt):
+                print("Ip is not in White List")
+                return
+        txt = xici()
         print(txt)
         self.ips.extend(list(map(lambda w : w.strip(),txt.strip().split("\n"))))
         self.store()
@@ -79,15 +83,10 @@ class ProxyPool:
             else:
                 proxyIp = self.getProxyIp()
             print('>>> [%d]Using Proxy Ip : '%len(self.ips),proxyIp)
-            #这是代理IP
             proxy = {'http':proxyIp}
-            #创建ProxyHandler
             proxy_support = urllib.request.ProxyHandler(proxy)
-            #创建Opener
             opener = urllib.request.build_opener(proxy_support)
-            #添加User Angent
             opener.addheaders = [('User-Agent','Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36')]
-            #安装Opener
             urllib.request.install_opener(opener)
             html = ""
             #使用自己安装好的Opener
@@ -124,10 +123,11 @@ class ProxyPool:
         for w in self.ips:
             cid += 1
             print(cid," out of ",len(self.ips))
-            url = 'http://www.whatismyip.com.tw/'
+            #url = 'http://www.whatismyip.com.tw/'
+            url = 'http://ip.chinaz.com'
             html = P.getHtmlViaProxy(url,w)
             time.sleep(.1)
-            print("OK")
+            print("Finish")
             if cid >= len(self.ips)*3:
                 break
 

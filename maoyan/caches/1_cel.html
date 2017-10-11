@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<link rel="shortcut icon" href="http://ms0.meituan.com/braavos/static/logo.png">
+<title>猫眼访问控制</title>
+<style>
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body{
+  text-align: center;
+  width: 100%;
+  max-width: 375px;
+  margin: auto;
+}
+header h3{
+  margin: 20px;
+  font-family: monospace;
+  text-transform: uppercase;
+}
+main{
+  width: 400px;
+  margin: auto;
+  padding: 10px;
+  background: #efefef;
+}
+
+img, input, button{
+  margin: auto;
+  display: block;
+}
+
+img{
+  height: 40px;
+}
+
+input{
+  outline: 0;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  margin-top: 3px;
+  text-align: center;
+  font-family: monospace;
+  border: 1px solid #efefef;
+}
+button{
+  width: 100%;
+  color: white;
+  border: none;
+  padding: 10px;
+  margin-top: 3px;
+  font-size: 16px;
+  background: #e54847;
+  text-transform: uppercase;
+}
+
+footer{
+  margin-top: 20px;
+  text-align: center;
+}
+
+footer a {
+  font-size: 14px;
+}
+
+.message{
+  color: red;
+}
+
+@media screen and (max-width: 768px){
+  body{
+    text-align: left !important;
+  }
+  main{
+    width: 95%;
+  }
+}
+
+</style>
+<script type="text/javascript">
+;(function(global, undefined){
+  function refresh(e){
+    this.setAttribute('src', this.src.replace(/&t=(\d+)/, '&t=' + +new Date));
+  }
+  document.addEventListener('DOMContentLoaded', function(){
+    var captcha = document.getElementById('captcha');
+    captcha.addEventListener('click', refresh);
+    captcha.addEventListener('touchstart', refresh);
+  });
+})(window);
+</script>
+</head>
+<body>
+  <header>
+    <!-- <h1>MaoYan Access Control System</h1> -->
+    <h3>
+      <p>很抱歉，您的访问被我们识别为机器行为</p>
+      <p>请输入以下验证码恢复访问</p>
+    </h3>
+  </header>
+  <main>
+    <p class="message" ></p>
+    <form method="post" >
+      <img id="captcha" src="https://verify.meituan.com/v2/captcha?request_code=a011a2f878d04097a910d378917c78b5&action=spiderindefence&t=1" alt="captcha" />
+      <input type="hidden" name="__oceanus" value="1">
+      <input type="hidden" name="ip" value="211.159.180.131" />
+      <input type="hidden" name="url" value="https://piaofang.maoyan.com/movie/1/celebritylist" />
+      <input type="hidden" name="ticket" value="ZWQ3ZTUwNjUtMjI1Ny00ZmIyLTliNTQtZTRiMDA2NTE1OGY5I0FDVElPTiNPQ0VBTlVTX1BSRURJQ0FURV9lZDdlNTA2NS0yMjU3LTRmYjItOWI1NC1lNGIwMDY1MTU4ZjlfY29tLnNhbmt1YWkubW92aWUucHJvLm5ib3hfYXBwX1ZlcmlmeUJsb2NrQWN0aW9uX1JlcS5fanNvbi5kYXRhLmlwXzIxMS4xNTkuMTgwLjEzMSNvY2VhbnVz" />
+      <input type="hidden" name="request_code" value="a011a2f878d04097a910d378917c78b5" />
+      <input type="text" name="captcha_code" required placeholder="" />
+      <button type="submit">提交</button>
+    </form>
+  </main>
+  <footer>
+    <a href="https://maoyan.com">猫眼电影</a>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html class="">
+<head>
+<meta charset="utf-8" />
+<meta name="keywords" content="猫眼票房分析,猫眼电影,电影票房,实时票房,日票房,预售票房,影片票房趋势,受众画像,实时排片,预售排片,上座率,历史票房" />
+<meta name="description" content="猫眼票房分析，提供最准确的每日电影实时票房、排片、上座率查询，为电影从业者提供最及时、专业的数据分析服务" />
+<meta http-equiv="Cache-Control" CONTENT="no-cache" />
+<meta http-equiv="Pragma" CONTENT="no-cache" />
+<meta http-equiv="cache-control" CONTENT="no-store" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="csrf" content="3c4e596f9b9b3e9dc29f45947389ad77270695f8" />
+<link rel="dns-prefetch" href="//analytics.meituan.com" />
+<link rel="dns-prefetch" href="//ms0.meituan.net" />
+<link rel="dns-prefetch" href="//mc.meituan.net" />
+<link rel="dns-prefetch" href="//s0.meituan.net" />
+<link rel="dns-prefetch" href="//p0.meituan.net" />
+<link rel="dns-prefetch" href="//p1.meituan.net" />
+<link rel="apple-touch-icon" href="//ms0.meituan.net/piaofang/img/wx_pic-daf3a7c4.png" />
+<link rel="icon" type="image/x-icon" href="//ms0.meituan.net/piaofang/img/favicon-f8defb48.ico" />
+<meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, user-scalable=no">
+<link rel="shortcut icon" type="image/x-icon" href="//ms0.meituan.net/piaofang/img/favicon-f8defb48.ico" />
+
+
+<style id="js-nuwa">
+  @font-face{font-family:"cs";src:url(data:application/font-woff;charset=utf-8;base64,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) format("woff");}
+.cs{font-family:cs}
+</style>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', function() {
+    var images = document.querySelectorAll('.need-handle-pic');
+    for(var i = 0; i < images.length; i++) {
+        var imgItem = images[i];
+        var className = imgItem.className;
+        var src = imgItem.getAttribute('src');
+        if (!src) {
+            imgItem.className = className + ' has-no-pic';
+            imgItem.setAttribute('alt', '');
+        } else {
+            imgItem.onerror = function(e) {
+                imgItem.className = className + ' has-error-pic';
+                imgItem.setAttribute('src', '');
+                imgItem.setAttribute('alt', '');
+            }
+        }
+    }
+});
+</script>
+<link rel="stylesheet" type="text/css" href="//ms0.meituan.net/piaofang/css/movie/detail.e2e3d185.css" />
+<title>极速天使</title>
+</head>
+<body class="has-bar">
+  <div id="wx_pic" style="display:none;">
+      <img src="//ms0.meituan.net/piaofang/img/wx_pic-daf3a7c4.png"/>
+  </div>
+  <header class="navBar ">
+  	<div class="nav-wrap-left">
+  		<a id="rank-back" data-com="hisBack" class="back">
+  			<i class="text-icon icon-back"></i>
+  		</a>
+  	</div>
+      <h1 class="nav-header navBarTitle">极速天使</h1>
+  </header>
+  <div class="scroller">
+    <div class="wrapper">
+      <div class="sections">
+        <section class="summary-section">
+  <div class="movie-baseinfo">
+    <div class="movie-bg-img" style="background-image:url(//p0.meituan.net/movie/34/33.jpg@165w_220h)"></div>
+    <div class="movie-bg-color"></div>
+    <div class="movie-container">
+      <div class="info-base">
+        <div class="info-poster">
+          <img src="//p0.meituan.net/movie/34/33.jpg@165w_220h" alt="极速天使" class="need-handle-pic"/>
+        </div>
+        <div class="info-moviecompare info-block center">
+          <span class="img"></span>
+          <span class="txt">影片对比</span>
+        </div>
+        <div class="info-detail">
+          <p class="info-title">
+            <span>极速天使</span>
+          </p>
+          <p class="info-etitle">Speed Angels</p>
+          <p class="info-category">
+            
+            剧情,爱情,动作
+          </p>
+          <p class="info-source-duration">
+            中国大陆,中国香港
+              /
+              <span>117分钟</span>
+          </p>
+          <a class="info-release"
+            href="javascript:void 0">
+            <span>2011-12-27大陆上映</span>
+          </a>
+          <p class="info-wish">
+            <span class="wish-num ">
+              <span class="info-wish-num">23</span>
+              <span class="info-wish-desc">人想看</span>
+            </span>
+          </p>
+        </div>
+      </div>
+        <div class="info-score">
+        <a class="info-score-persona info-block"
+          href="javascript:void 0">
+          <span class="logo"></span>
+          <span class="split"></span>
+          <div class="scores">
+              <div class="percentbar">
+                <span class="percentbar-label">9-10分</span>
+                <div class="percentbar-all">
+                  <div class="percentbar-fill" style="width:0"></div>
+                </div>
+                <span class="percentbar-val">--</span>
+              </div>
+              <div class="percentbar">
+                <span class="percentbar-label">5-8分</span>
+                <div class="percentbar-all">
+                  <div class="percentbar-fill" style="width:0"></div>
+                </div>
+                <span class="percentbar-val">--</span>
+              </div>
+              <div class="percentbar">
+                <span class="percentbar-label">1-4分</span>
+                <div class="percentbar-all">
+                  <div class="percentbar-fill" style="width:0"></div>
+                </div>
+                <span class="percentbar-val">--</span>
+              </div>
+          </div>
+        </a>
+        <a href="https://m.maoyan.com/movie/33/comments?_v_&#x3D;yes">
+            <div class="info-score-total info-block">
+              <span class="title release"></span>
+              <div class="rating-stars">
+                  <span class="rating-num">5.1</span>
+                  <span class="rating-star fullstar"></span>
+                  <span class="rating-star fullstar"></span>
+                  <span class="rating-star halfstar"></span>
+                  <span class="rating-star star"></span>
+                  <span class="rating-star star"></span>
+              </div>
+                <p class="value">114人
+            </div>
+        </a>
+        </div>
+        <div class="info-box-summary info-block">
+          <span class="emspan">累计综合票房<em>2446.4</em>万</span>
+          <div class="forecast">
+            <span class="emspan">预测总票房<em>--</em></span>
+          </div>
+        </div>
+        <div class="info-splitbox-summary info-block">
+          <div class="info-sb-total">
+            <div>
+              <span>累计分账票房</span>
+              <div class="hint-area center">
+                <span class="hint"></span>
+              </div>
+            </div>
+            <span class="emspan"><em>2446.4</em>万</span>
+          </div>
+          <div class="info-sb-routings">
+              <div class="info-sb-split"></div>
+              <div class="info-sb-item center">
+                <p class="info-sb-percent">片方(36.68%)</p>
+                <p class="info-sb-num">
+                  <span class="num">897.4</span>
+                  <span class="unit">万</span>
+                </p>
+              </div>
+              <div class="info-sb-split"></div>
+              <div class="info-sb-item center">
+                <p class="info-sb-percent">影院(52.27%)</p>
+                <p class="info-sb-num">
+                  <span class="num">1278.7</span>
+                  <span class="unit">万</span>
+                </p>
+              </div>
+              <div class="info-sb-split"></div>
+              <div class="info-sb-item center">
+                <p class="info-sb-percent">其他(11.05%)</p>
+                <p class="info-sb-num">
+                  <span class="num">270.3</span>
+                  <span class="unit">万</span>
+                </p>
+              </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</section>
+
+        <div class="section-group ">
+          <div class="section-group">
+            <section class="box-section">
+  <div class="bs-chart-wrapper-d3">
+    <div class="clearfix">
+      <div class="bsc-tab">
+          <div class="bsct bsct-box active">日票房</div>
+          <div class="bsct bsct-show">日排片</div>
+      </div>
+    </div>
+    
+    <div class="bsc-chart-d3">
+      <div class="bscc-box-d3">
+          
+            <div class="svg-line my-chart single" color-type="index"><svg height="100%" width="100%" id="boxChart" viewBox="0,0,360,170" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"><g class="x axis" transform="translate(50,151.5)" fill="none" font-size="10" font-family="sans-serif" text-anchor="middle"><path class="domain" stroke="#000" d="M0.5,6V0.5H296.5V6"/><g class="tick" opacity="1" transform="translate(0.5,0)"><line stroke="#000" y2="6"/><text fill="#000" y="9" dy="0.71em" opacity="0">12/27</text></g><g class="tick" opacity="1" transform="translate(13.369565217391305,0)"><line stroke="#000" y2="6"/><text fill="#000" y="9" dy="0.71em" opacity="0">12/28</text></g><g class="tick" opacity="1" transform="translate(26.23913043478261,0)"><line stroke="#000" y2="6"/><text fill="#000" y="9" dy="0.71em" opacity="1">12/29</text></g><g class="tick" opacity="1" transform="translate(39.108695652173914,0)"><line stroke="#000" y2="6"/><text fill="#000" y="9" dy="0.71em" opacity="0">12/30</text></g><g class="tick" opacity="1" transform="translate(51.97826086956522,0)"><line stroke="#000" y2="6"/><text fill="#000" y="9" dy="0.71em" opacity="0">12/31</text></g><g class="tick" opacity="1" transform="translate(64.84782608695653,0)"><line stroke="#000" y2="6"/><text fill="#000" y="9" dy="0.71em" opacity="1">1/1</text></g><g class="tick" opacity="1" transform="translate(77.71739130434783,0)"><line stroke="#000" y2="6"/><text fill="#000" y="9" dy="0.71em" opacity="0">1/2</text></g><g class="tick" opacity="1" transform="translate(90.58695652173913,0)"><line stroke="#000" y2="6"/><text fill="#000" y="9" dy="0.71em" opacity="0">1/3</text></g><g class="tick" opacity="1" transform="translate(103.45652173913044,0)"><line stroke="#000" y2="6"/><text fill="#000" y="9" dy="0.71em" opacity="1">1/4</text></g><g class="tick" opacity="1" transform="translate(116.32608695652175,0)"><line stroke="#000" y2="6"/><text fill="#000" y="9" dy="0.71em" opacity="0">1/5</text></g><g class="tick" opacity="1" transform="translate(129.19565217391306,0)"><line stroke="#000" y2="6"/><text fill="#000" y="9" dy="0.71em" opacity="0">1/6</text></g><g class="tick" opacity="1" transform="translate(142.06521739130434,0)"><line stroke="#000" y2="6"/><text fill="#000" y="9" dy="0.71em" opacity="1">1/7</text></g><g class="tick" opacity="1" transform="translate(154.93478260869566,0)"><line stroke="#000" y2="6"/><text fill="#000" y="9" dy="0.71em" opacity="0">1/8</text></g><g class="tick" opacity="1" transform="translate(167.80434782608697,0)"><line stroke="#000" y2="6"/><text fill="#000" y="9" dy="0.71em" opacity="0">1/9</text></g><g class="tick" opacity="1" transform="translate(180.67391304347825,0)"><line stroke="#000" y2="6"/><text fill="#000" y="9" dy="0.71em" opacity="1">1/10</text></g><g class="tick" opacity="1" transform="translate(193.54347826086956,0)"><line stroke="#000" y2="6"/><text fill="#000" y="9" dy="0.71em" opacity="0">1/11</text></g><g class="tick" opacity="1" transform="translate(206.41304347826087,0)"><line stroke="#000" y2="6"/><text fill="#000" y="9" dy="0.71em" opacity="0">1/12</text></g><g class="tick" opacity="1" transform="translate(219.2826086956522,0)"><line stroke="#000" y2="6"/><text fill="#000" y="9" dy="0.71em" opacity="1">1/13</text></g><g class="tick" opacity="1" transform="translate(232.1521739130435,0)"><line stroke="#000" y2="6"/><text fill="#000" y="9" dy="0.71em" opacity="0">1/14</text></g><g class="tick" opacity="1" transform="translate(245.02173913043478,0)"><line stroke="#000" y2="6"/><text fill="#000" y="9" dy="0.71em" opacity="0">1/15</text></g><g class="tick" opacity="1" transform="translate(257.8913043478261,0)"><line stroke="#000" y2="6"/><text fill="#000" y="9" dy="0.71em" opacity="1">1/16</text></g><g class="tick" opacity="1" transform="translate(270.7608695652174,0)"><line stroke="#000" y2="6"/><text fill="#000" y="9" dy="0.71em" opacity="0">1/17</text></g><g class="tick" opacity="1" transform="translate(283.6304347826087,0)"><line stroke="#000" y2="6"/><text fill="#000" y="9" dy="0.71em" opacity="0">1/19</text></g><g class="tick" opacity="1" transform="translate(296.5,0)"><line stroke="#000" y2="6"/><text fill="#000" y="9" dy="0.71em" opacity="1">1/20</text></g></g><g class="y axis" transform="translate(50,12)" fill="none" font-size="10" font-family="sans-serif" text-anchor="end"><path class="domain" stroke="#000" d="M-6,140.5H0.5V0.5H-6"/><g class="tick" opacity="1" transform="translate(0,140.5)"><line stroke="#000" x2="-6"/><text fill="#000" x="-9" dy="0.32em">0</text></g><g class="tick" opacity="1" transform="translate(0,105.5)"><line stroke="#000" x2="-6"/><text fill="#000" x="-9" dy="0.32em">100</text></g><g class="tick" opacity="1" transform="translate(0,70.5)"><line stroke="#000" x2="-6"/><text fill="#000" x="-9" dy="0.32em">200</text></g><g class="tick" opacity="1" transform="translate(0,35.5)"><line stroke="#000" x2="-6"/><text fill="#000" x="-9" dy="0.32em">300</text></g><g class="tick" opacity="1" transform="translate(0,0.5)"><line stroke="#000" x2="-6"/><text fill="#000" x="-9" dy="0.32em">400</text></g></g><g class="inner-line-y" transform="translate(50,12)" fill="none" font-size="10" font-family="sans-serif" text-anchor="end"><path class="domain" stroke="#000" d="M296,140.5H0.5V0.5H296"/><g class="tick" opacity="1" transform="translate(0,140.5)"><line stroke="#000" x2="296"/><text fill="#000" x="-3" dy="0.32em"/></g><g class="tick" opacity="1" transform="translate(0,105.5)"><line stroke="#000" x2="296"/><text fill="#000" x="-3" dy="0.32em"/></g><g class="tick" opacity="1" transform="translate(0,70.5)"><line stroke="#000" x2="296"/><text fill="#000" x="-3" dy="0.32em"/></g><g class="tick" opacity="1" transform="translate(0,35.5)"><line stroke="#000" x2="296"/><text fill="#000" x="-3" dy="0.32em"/></g><g class="tick" opacity="1" transform="translate(0,0.5)"><line stroke="#000" x2="296"/><text fill="#000" x="-3" dy="0.32em"/></g></g><g class="inner-line-x" transform="translate(50,152)" fill="none" font-size="10" font-family="sans-serif" text-anchor="middle"><path class="domain" stroke="#000" d="M0.5,-140V0.5H296.5V-140"/><g class="tick" opacity="1" transform="translate(0.5,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(13.369565217391305,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(26.23913043478261,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(39.108695652173914,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(51.97826086956522,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(64.84782608695653,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(77.71739130434783,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(90.58695652173913,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(103.45652173913044,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(116.32608695652175,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(129.19565217391306,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(142.06521739130434,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(154.93478260869566,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(167.80434782608697,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(180.67391304347825,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(193.54347826086956,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(206.41304347826087,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(219.2826086956522,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(232.1521739130435,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(245.02173913043478,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(257.8913043478261,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(270.7608695652174,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(283.6304347826087,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(296.5,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g></g><path class="real area" d="M0,94.71000000000001L12.869565217391305,46.97L25.73913043478261,61.39L38.608695652173914,60.2L51.47826086956522,31.674999999999997L64.34782608695653,27.965000000000003L77.21739130434783,49.7L90.08695652173913,75.425L102.95652173913044,104.125L115.82608695652175,105.945L128.69565217391306,122.36L141.56521739130434,114.38L154.43478260869566,116.55L167.30434782608697,127.33L180.17391304347825,125.78999999999999L193.04347826086956,128.135L205.91304347826087,138.215L218.7826086956522,138.32L231.6521739130435,138.285L244.52173913043478,138.845L257.3913043478261,139.195L270.2608695652174,139.195L283.1304347826087,139.65L296,139.72L296,140L283.1304347826087,140L270.2608695652174,140L257.3913043478261,140L244.52173913043478,140L231.6521739130435,140L218.7826086956522,140L205.91304347826087,140L193.04347826086956,140L180.17391304347825,140L167.30434782608697,140L154.43478260869566,140L141.56521739130434,140L128.69565217391306,140L115.82608695652175,140L102.95652173913044,140L90.08695652173913,140L77.21739130434783,140L64.34782608695653,140L51.47826086956522,140L38.608695652173914,140L25.73913043478261,140L12.869565217391305,140L0,140Z" transform="translate(50.5,12)"/><path class="line real" d="M0,94.71000000000001L12.869565217391305,46.97L25.73913043478261,61.39L38.608695652173914,60.2L51.47826086956522,31.674999999999997L64.34782608695653,27.965000000000003L77.21739130434783,49.7L90.08695652173913,75.425L102.95652173913044,104.125L115.82608695652175,105.945L128.69565217391306,122.36L141.56521739130434,114.38L154.43478260869566,116.55L167.30434782608697,127.33L180.17391304347825,125.78999999999999L193.04347826086956,128.135L205.91304347826087,138.215L218.7826086956522,138.32L231.6521739130435,138.285L244.52173913043478,138.845L257.3913043478261,139.195L270.2608695652174,139.195L283.1304347826087,139.65L296,139.72" transform="translate(50.5,12)" stroke=""/><g class="dot-group group-real"><circle class="dot" cx="0" cy="94.71000000000001" transform="translate(50.5,12)" data-info="2011-12-27 周二 129.4万 分账票房" fill="real" stroke=""/><circle class="dot" cx="12.869565217391305" cy="46.97" transform="translate(50.5,12)" data-info="2011-12-28 周三 265.8万 分账票房" fill="real" stroke=""/><circle class="dot" cx="25.73913043478261" cy="61.39" transform="translate(50.5,12)" data-info="2011-12-29 周四 224.6万 分账票房" fill="real" stroke=""/><circle class="dot" cx="38.608695652173914" cy="60.2" transform="translate(50.5,12)" data-info="2011-12-30 周五 228万 分账票房" fill="real" stroke=""/><circle class="dot" cx="51.47826086956522" cy="31.674999999999997" transform="translate(50.5,12)" data-info="2011-12-31 周六 309.5万 分账票房" fill="real" stroke=""/><circle class="dot" cx="64.34782608695653" cy="27.965000000000003" transform="translate(50.5,12)" data-info="2012-01-01 周日 320.1万 分账票房" fill="real" stroke=""/><circle class="dot" cx="77.21739130434783" cy="49.7" transform="translate(50.5,12)" data-info="2012-01-02 周一 258万 分账票房" fill="real" stroke=""/><circle class="dot" cx="90.08695652173913" cy="75.425" transform="translate(50.5,12)" data-info="2012-01-03 周二 184.5万 分账票房" fill="real" stroke=""/><circle class="dot" cx="102.95652173913044" cy="104.125" transform="translate(50.5,12)" data-info="2012-01-04 周三 102.5万 分账票房" fill="real" stroke=""/><circle class="dot" cx="115.82608695652175" cy="105.945" transform="translate(50.5,12)" data-info="2012-01-05 周四 97.3万 分账票房" fill="real" stroke=""/><circle class="dot" cx="128.69565217391306" cy="122.36" transform="translate(50.5,12)" data-info="2012-01-06 周五 50.4万 分账票房" fill="real" stroke=""/><circle class="dot" cx="141.56521739130434" cy="114.38" transform="translate(50.5,12)" data-info="2012-01-07 周六 73.2万 分账票房" fill="real" stroke=""/><circle class="dot" cx="154.43478260869566" cy="116.55" transform="translate(50.5,12)" data-info="2012-01-08 周日 67万 分账票房" fill="real" stroke=""/><circle class="dot" cx="167.30434782608697" cy="127.33" transform="translate(50.5,12)" data-info="2012-01-09 周一 36.2万 分账票房" fill="real" stroke=""/><circle class="dot" cx="180.17391304347825" cy="125.78999999999999" transform="translate(50.5,12)" data-info="2012-01-10 周二 40.6万 分账票房" fill="real" stroke=""/><circle class="dot" cx="193.04347826086956" cy="128.135" transform="translate(50.5,12)" data-info="2012-01-11 周三 33.9万 分账票房" fill="real" stroke=""/><circle class="dot" cx="205.91304347826087" cy="138.215" transform="translate(50.5,12)" data-info="2012-01-12 周四 5.1万 分账票房" fill="real" stroke=""/><circle class="dot" cx="218.7826086956522" cy="138.32" transform="translate(50.5,12)" data-info="2012-01-13 周五 4.8万 分账票房" fill="real" stroke=""/><circle class="dot" cx="231.6521739130435" cy="138.285" transform="translate(50.5,12)" data-info="2012-01-14 周六 4.9万 分账票房" fill="real" stroke=""/><circle class="dot" cx="244.52173913043478" cy="138.845" transform="translate(50.5,12)" data-info="2012-01-15 周日 3.3万 分账票房" fill="real" stroke=""/><circle class="dot" cx="257.3913043478261" cy="139.195" transform="translate(50.5,12)" data-info="2012-01-16 周一 2.3万 分账票房" fill="real" stroke=""/><circle class="dot" cx="270.2608695652174" cy="139.195" transform="translate(50.5,12)" data-info="2012-01-17 周二 2.3万 分账票房" fill="real" stroke=""/><circle class="dot" cx="283.1304347826087" cy="139.65" transform="translate(50.5,12)" data-info="2012-01-19 周四 1万 分账票房" fill="real" stroke=""/><circle class="dot" cx="296" cy="139.72" transform="translate(50.5,12)" data-info="2012-01-20 周五 0.8万 分账票房" fill="real" stroke=""/></g><path class="forecast area" transform="translate(50.5,12)"/><path class="line forecast" transform="translate(50.5,12)" stroke=""/><g class="dot-group group-forecast"/><g class="inner-line-mask" transform="translate(50,152.5)" fill="none" font-size="10" font-family="sans-serif" text-anchor="middle"><path class="domain" stroke="#000" d="M0.5,-140V0.5H296.5V-140"/><g class="tick" opacity="1" transform="translate(0.5,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(13.369565217391305,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(26.23913043478261,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(39.108695652173914,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(51.97826086956522,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(64.84782608695653,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(77.71739130434783,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(90.58695652173913,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(103.45652173913044,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(116.32608695652175,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(129.19565217391306,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(142.06521739130434,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(154.93478260869566,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(167.80434782608697,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(180.67391304347825,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(193.54347826086956,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(206.41304347826087,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(219.2826086956522,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(232.1521739130435,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(245.02173913043478,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(257.8913043478261,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(270.7608695652174,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(283.6304347826087,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(296.5,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g></g></svg><div class="tooltip"> </div></div>
+          
+      </div>
+      <div class="bscc-show-d3" style="display:none">
+          
+            <div class="svg-line my-chart single" color-type="index"><svg height="100%" width="100%" id="showChart" viewBox="0,0,360,170" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"><g class="x axis" transform="translate(50,151.5)" fill="none" font-size="10" font-family="sans-serif" text-anchor="middle"><path class="domain" stroke="#000" d="M0.5,6V0.5H296.5V6"/><g class="tick" opacity="1" transform="translate(0.5,0)"><line stroke="#000" y2="6"/><text fill="#000" y="9" dy="0.71em" opacity="0">12/27</text></g><g class="tick" opacity="1" transform="translate(13.369565217391305,0)"><line stroke="#000" y2="6"/><text fill="#000" y="9" dy="0.71em" opacity="0">12/28</text></g><g class="tick" opacity="1" transform="translate(26.23913043478261,0)"><line stroke="#000" y2="6"/><text fill="#000" y="9" dy="0.71em" opacity="1">12/29</text></g><g class="tick" opacity="1" transform="translate(39.108695652173914,0)"><line stroke="#000" y2="6"/><text fill="#000" y="9" dy="0.71em" opacity="0">12/30</text></g><g class="tick" opacity="1" transform="translate(51.97826086956522,0)"><line stroke="#000" y2="6"/><text fill="#000" y="9" dy="0.71em" opacity="0">12/31</text></g><g class="tick" opacity="1" transform="translate(64.84782608695653,0)"><line stroke="#000" y2="6"/><text fill="#000" y="9" dy="0.71em" opacity="1">1/1</text></g><g class="tick" opacity="1" transform="translate(77.71739130434783,0)"><line stroke="#000" y2="6"/><text fill="#000" y="9" dy="0.71em" opacity="0">1/2</text></g><g class="tick" opacity="1" transform="translate(90.58695652173913,0)"><line stroke="#000" y2="6"/><text fill="#000" y="9" dy="0.71em" opacity="0">1/3</text></g><g class="tick" opacity="1" transform="translate(103.45652173913044,0)"><line stroke="#000" y2="6"/><text fill="#000" y="9" dy="0.71em" opacity="1">1/4</text></g><g class="tick" opacity="1" transform="translate(116.32608695652175,0)"><line stroke="#000" y2="6"/><text fill="#000" y="9" dy="0.71em" opacity="0">1/5</text></g><g class="tick" opacity="1" transform="translate(129.19565217391306,0)"><line stroke="#000" y2="6"/><text fill="#000" y="9" dy="0.71em" opacity="0">1/6</text></g><g class="tick" opacity="1" transform="translate(142.06521739130434,0)"><line stroke="#000" y2="6"/><text fill="#000" y="9" dy="0.71em" opacity="1">1/7</text></g><g class="tick" opacity="1" transform="translate(154.93478260869566,0)"><line stroke="#000" y2="6"/><text fill="#000" y="9" dy="0.71em" opacity="0">1/8</text></g><g class="tick" opacity="1" transform="translate(167.80434782608697,0)"><line stroke="#000" y2="6"/><text fill="#000" y="9" dy="0.71em" opacity="0">1/9</text></g><g class="tick" opacity="1" transform="translate(180.67391304347825,0)"><line stroke="#000" y2="6"/><text fill="#000" y="9" dy="0.71em" opacity="1">1/10</text></g><g class="tick" opacity="1" transform="translate(193.54347826086956,0)"><line stroke="#000" y2="6"/><text fill="#000" y="9" dy="0.71em" opacity="0">1/11</text></g><g class="tick" opacity="1" transform="translate(206.41304347826087,0)"><line stroke="#000" y2="6"/><text fill="#000" y="9" dy="0.71em" opacity="0">1/12</text></g><g class="tick" opacity="1" transform="translate(219.2826086956522,0)"><line stroke="#000" y2="6"/><text fill="#000" y="9" dy="0.71em" opacity="1">1/13</text></g><g class="tick" opacity="1" transform="translate(232.1521739130435,0)"><line stroke="#000" y2="6"/><text fill="#000" y="9" dy="0.71em" opacity="0">1/14</text></g><g class="tick" opacity="1" transform="translate(245.02173913043478,0)"><line stroke="#000" y2="6"/><text fill="#000" y="9" dy="0.71em" opacity="0">1/15</text></g><g class="tick" opacity="1" transform="translate(257.8913043478261,0)"><line stroke="#000" y2="6"/><text fill="#000" y="9" dy="0.71em" opacity="1">1/16</text></g><g class="tick" opacity="1" transform="translate(270.7608695652174,0)"><line stroke="#000" y2="6"/><text fill="#000" y="9" dy="0.71em" opacity="0">1/17</text></g><g class="tick" opacity="1" transform="translate(283.6304347826087,0)"><line stroke="#000" y2="6"/><text fill="#000" y="9" dy="0.71em" opacity="0">1/19</text></g><g class="tick" opacity="1" transform="translate(296.5,0)"><line stroke="#000" y2="6"/><text fill="#000" y="9" dy="0.71em" opacity="1">1/20</text></g></g><g class="y axis" transform="translate(50,12)" fill="none" font-size="10" font-family="sans-serif" text-anchor="end"><path class="domain" stroke="#000" d="M-6,140.5H0.5V0.5H-6"/><g class="tick" opacity="1" transform="translate(0,140.5)"><line stroke="#000" x2="-6"/><text fill="#000" x="-9" dy="0.32em">0</text></g><g class="tick" opacity="1" transform="translate(0,112.5)"><line stroke="#000" x2="-6"/><text fill="#000" x="-9" dy="0.32em">1,000</text></g><g class="tick" opacity="1" transform="translate(0,84.5)"><line stroke="#000" x2="-6"/><text fill="#000" x="-9" dy="0.32em">2,000</text></g><g class="tick" opacity="1" transform="translate(0,56.5)"><line stroke="#000" x2="-6"/><text fill="#000" x="-9" dy="0.32em">3,000</text></g><g class="tick" opacity="1" transform="translate(0,28.5)"><line stroke="#000" x2="-6"/><text fill="#000" x="-9" dy="0.32em">4,000</text></g><g class="tick" opacity="1" transform="translate(0,0.5)"><line stroke="#000" x2="-6"/><text fill="#000" x="-9" dy="0.32em">5,000</text></g></g><g class="inner-line-y" transform="translate(50,12)" fill="none" font-size="10" font-family="sans-serif" text-anchor="end"><path class="domain" stroke="#000" d="M296,140.5H0.5V0.5H296"/><g class="tick" opacity="1" transform="translate(0,140.5)"><line stroke="#000" x2="296"/><text fill="#000" x="-3" dy="0.32em"/></g><g class="tick" opacity="1" transform="translate(0,112.5)"><line stroke="#000" x2="296"/><text fill="#000" x="-3" dy="0.32em"/></g><g class="tick" opacity="1" transform="translate(0,84.5)"><line stroke="#000" x2="296"/><text fill="#000" x="-3" dy="0.32em"/></g><g class="tick" opacity="1" transform="translate(0,56.5)"><line stroke="#000" x2="296"/><text fill="#000" x="-3" dy="0.32em"/></g><g class="tick" opacity="1" transform="translate(0,28.5)"><line stroke="#000" x2="296"/><text fill="#000" x="-3" dy="0.32em"/></g><g class="tick" opacity="1" transform="translate(0,0.5)"><line stroke="#000" x2="296"/><text fill="#000" x="-3" dy="0.32em"/></g></g><g class="inner-line-x" transform="translate(50,152)" fill="none" font-size="10" font-family="sans-serif" text-anchor="middle"><path class="domain" stroke="#000" d="M0.5,-140V0.5H296.5V-140"/><g class="tick" opacity="1" transform="translate(0.5,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(13.369565217391305,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(26.23913043478261,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(39.108695652173914,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(51.97826086956522,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(64.84782608695653,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(77.71739130434783,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(90.58695652173913,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(103.45652173913044,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(116.32608695652175,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(129.19565217391306,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(142.06521739130434,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(154.93478260869566,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(167.80434782608697,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(180.67391304347825,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(193.54347826086956,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(206.41304347826087,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(219.2826086956522,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(232.1521739130435,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(245.02173913043478,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(257.8913043478261,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(270.7608695652174,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(283.6304347826087,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(296.5,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g></g><path class="real area" d="M0,91.44800000000001L12.869565217391305,13.216000000000008L25.73913043478261,20.888000000000005L38.608695652173914,33.096000000000004L51.47826086956522,38.36L64.34782608695653,26.908L77.21739130434783,25.423999999999992L90.08695652173913,26.572000000000003L102.95652173913044,34.88799999999999L115.82608695652175,39.620000000000005L128.69565217391306,93.268L141.56521739130434,93.1L154.43478260869566,93.436L167.30434782608697,97.664L180.17391304347825,96.096L193.04347826086956,105.98L205.91304347826087,130.62L218.7826086956522,132.328L231.6521739130435,132.86L244.52173913043478,133.868L257.3913043478261,133.756L270.2608695652174,134.764L283.1304347826087,137.508L296,138.684L296,140L283.1304347826087,140L270.2608695652174,140L257.3913043478261,140L244.52173913043478,140L231.6521739130435,140L218.7826086956522,140L205.91304347826087,140L193.04347826086956,140L180.17391304347825,140L167.30434782608697,140L154.43478260869566,140L141.56521739130434,140L128.69565217391306,140L115.82608695652175,140L102.95652173913044,140L90.08695652173913,140L77.21739130434783,140L64.34782608695653,140L51.47826086956522,140L38.608695652173914,140L25.73913043478261,140L12.869565217391305,140L0,140Z" transform="translate(50.5,12)"/><path class="line real" d="M0,91.44800000000001L12.869565217391305,13.216000000000008L25.73913043478261,20.888000000000005L38.608695652173914,33.096000000000004L51.47826086956522,38.36L64.34782608695653,26.908L77.21739130434783,25.423999999999992L90.08695652173913,26.572000000000003L102.95652173913044,34.88799999999999L115.82608695652175,39.620000000000005L128.69565217391306,93.268L141.56521739130434,93.1L154.43478260869566,93.436L167.30434782608697,97.664L180.17391304347825,96.096L193.04347826086956,105.98L205.91304347826087,130.62L218.7826086956522,132.328L231.6521739130435,132.86L244.52173913043478,133.868L257.3913043478261,133.756L270.2608695652174,134.764L283.1304347826087,137.508L296,138.684" transform="translate(50.5,12)" stroke=""/><g class="dot-group group-real"><circle class="dot" cx="0" cy="91.44800000000001" transform="translate(50.5,12)" data-info="2011-12-27 周二 1734场次" fill="real" stroke=""/><circle class="dot" cx="12.869565217391305" cy="13.216000000000008" transform="translate(50.5,12)" data-info="2011-12-28 周三 4528场次" fill="real" stroke=""/><circle class="dot" cx="25.73913043478261" cy="20.888000000000005" transform="translate(50.5,12)" data-info="2011-12-29 周四 4254场次" fill="real" stroke=""/><circle class="dot" cx="38.608695652173914" cy="33.096000000000004" transform="translate(50.5,12)" data-info="2011-12-30 周五 3818场次" fill="real" stroke=""/><circle class="dot" cx="51.47826086956522" cy="38.36" transform="translate(50.5,12)" data-info="2011-12-31 周六 3630场次" fill="real" stroke=""/><circle class="dot" cx="64.34782608695653" cy="26.908" transform="translate(50.5,12)" data-info="2012-01-01 周日 4039场次" fill="real" stroke=""/><circle class="dot" cx="77.21739130434783" cy="25.423999999999992" transform="translate(50.5,12)" data-info="2012-01-02 周一 4092场次" fill="real" stroke=""/><circle class="dot" cx="90.08695652173913" cy="26.572000000000003" transform="translate(50.5,12)" data-info="2012-01-03 周二 4051场次" fill="real" stroke=""/><circle class="dot" cx="102.95652173913044" cy="34.88799999999999" transform="translate(50.5,12)" data-info="2012-01-04 周三 3754场次" fill="real" stroke=""/><circle class="dot" cx="115.82608695652175" cy="39.620000000000005" transform="translate(50.5,12)" data-info="2012-01-05 周四 3585场次" fill="real" stroke=""/><circle class="dot" cx="128.69565217391306" cy="93.268" transform="translate(50.5,12)" data-info="2012-01-06 周五 1669场次" fill="real" stroke=""/><circle class="dot" cx="141.56521739130434" cy="93.1" transform="translate(50.5,12)" data-info="2012-01-07 周六 1675场次" fill="real" stroke=""/><circle class="dot" cx="154.43478260869566" cy="93.436" transform="translate(50.5,12)" data-info="2012-01-08 周日 1663场次" fill="real" stroke=""/><circle class="dot" cx="167.30434782608697" cy="97.664" transform="translate(50.5,12)" data-info="2012-01-09 周一 1512场次" fill="real" stroke=""/><circle class="dot" cx="180.17391304347825" cy="96.096" transform="translate(50.5,12)" data-info="2012-01-10 周二 1568场次" fill="real" stroke=""/><circle class="dot" cx="193.04347826086956" cy="105.98" transform="translate(50.5,12)" data-info="2012-01-11 周三 1215场次" fill="real" stroke=""/><circle class="dot" cx="205.91304347826087" cy="130.62" transform="translate(50.5,12)" data-info="2012-01-12 周四 335场次" fill="real" stroke=""/><circle class="dot" cx="218.7826086956522" cy="132.328" transform="translate(50.5,12)" data-info="2012-01-13 周五 274场次" fill="real" stroke=""/><circle class="dot" cx="231.6521739130435" cy="132.86" transform="translate(50.5,12)" data-info="2012-01-14 周六 255场次" fill="real" stroke=""/><circle class="dot" cx="244.52173913043478" cy="133.868" transform="translate(50.5,12)" data-info="2012-01-15 周日 219场次" fill="real" stroke=""/><circle class="dot" cx="257.3913043478261" cy="133.756" transform="translate(50.5,12)" data-info="2012-01-16 周一 223场次" fill="real" stroke=""/><circle class="dot" cx="270.2608695652174" cy="134.764" transform="translate(50.5,12)" data-info="2012-01-17 周二 187场次" fill="real" stroke=""/><circle class="dot" cx="283.1304347826087" cy="137.508" transform="translate(50.5,12)" data-info="2012-01-19 周四 89场次" fill="real" stroke=""/><circle class="dot" cx="296" cy="138.684" transform="translate(50.5,12)" data-info="2012-01-20 周五 47场次" fill="real" stroke=""/></g><path class="forecast area" transform="translate(50.5,12)"/><path class="line forecast" transform="translate(50.5,12)" stroke=""/><g class="dot-group group-forecast"/><g class="inner-line-mask" transform="translate(50,152.5)" fill="none" font-size="10" font-family="sans-serif" text-anchor="middle"><path class="domain" stroke="#000" d="M0.5,-140V0.5H296.5V-140"/><g class="tick" opacity="1" transform="translate(0.5,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(13.369565217391305,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(26.23913043478261,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(39.108695652173914,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(51.97826086956522,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(64.84782608695653,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(77.71739130434783,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(90.58695652173913,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(103.45652173913044,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(116.32608695652175,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(129.19565217391306,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(142.06521739130434,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(154.93478260869566,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(167.80434782608697,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(180.67391304347825,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(193.54347826086956,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(206.41304347826087,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(219.2826086956522,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(232.1521739130435,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(245.02173913043478,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(257.8913043478261,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(270.7608695652174,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(283.6304347826087,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g><g class="tick" opacity="1" transform="translate(296.5,0)"><line stroke="#000" y2="-140"/><text fill="#000" y="3" dy="0.71em"/></g></g></svg><div class="tooltip"> </div></div>
+          
+      </div>
+    </div>
+  </div>
+    <div class="t-table">
+      <div class="t-main-col">
+        <div class="t-header">
+          <div class="t-col">
+            <div>日期</div><div class="holder">(万元)</div>
+          </div>
+        </div>
+          <div class="t-row">
+            <div class="t-col">
+              <span><b>2011-12-27</b><br/>周二<em style="color:rgba(255,153,0, 1.00)">上映首日</em></span>
+            </div>
+          </div>
+          <div class="t-row">
+            <div class="t-col">
+              <span><b>2011-12-28</b><br/>周三<em style="color:rgba(102,102,102, 1.00)">上映2天</em></span>
+            </div>
+          </div>
+          <div class="t-row">
+            <div class="t-col">
+              <span><b>2011-12-29</b><br/>周四<em style="color:rgba(102,102,102, 1.00)">上映3天</em></span>
+            </div>
+          </div>
+      </div>
+      <div class="t-other-col">
+        <div class="t-change-wrapper">
+          <div class="t-change">
+            <div class="t-header">
+                <div class="t-col">
+                    <div>分账票房</div><div class="unit">(万元)</div>
+                </div>
+                <div class="t-col">
+                    <div>分账票房</div><div class="unit">占比</div>
+                </div>
+                <div class="t-col">
+                    <div>排片占比</div><div class="holder">(万元)</div>
+                </div>
+                <div class="t-col">
+                    <div>场均人次</div><div class="holder">(万元)</div>
+                </div>
+            </div>
+              <div class="t-row">
+                  <div class="t-col"><i class="cs">&#xeebf;&#xeb48;&#xf004;.&#xeca1;</i></div>
+                  <div class="t-col"><i class="cs">&#xeb48;.&#xecc7;%</i></div>
+                  <div class="t-col"><i class="cs">&#xeca1;.&#xeebf;%</i></div>
+                  <div class="t-col"><i class="cs">&#xeb48;&#xeca1;</i></div>
+              </div>
+              <div class="t-row">
+                  <div class="t-col"><i class="cs">&#xeb48;&#xf634;&#xf633;.&#xecc7;</i></div>
+                  <div class="t-col"><i class="cs">&#xe760;.&#xeebf;%</i></div>
+                  <div class="t-col"><i class="cs">&#xeebf;&#xeebf;.&#xeebf;%</i></div>
+                  <div class="t-col"><i class="cs">&#xeebf;&#xf004;</i></div>
+              </div>
+              <div class="t-row">
+                  <div class="t-col"><i class="cs">&#xeb48;&#xeb48;&#xeca1;.&#xf634;</i></div>
+                  <div class="t-col"><i class="cs">&#xf634;.&#xeebf;%</i></div>
+                  <div class="t-col"><i class="cs">&#xeebf;&#xf187;.&#xeebf;%</i></div>
+                  <div class="t-col"><i class="cs">&#xeebf;&#xe760;</i></div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a href="/movie/33/boxshow">
+      <div class="more-link">
+        <span>查看全部日期和指标</span>
+        <div class="arrowicon right red">
+        </div>  </div>
+    </a>
+</section>
+
+            
+          </div>
+          <div class="section-group">
+            
+            
+            
+          </div>
+        </div>
+      </div>
+      <!-- 意见反馈 -->
+      <p class="feedback">*丰富信息请 <a href="http://survey.meituan.com/?r=survey/index/sid/197988/lang/zh-Hans">联系我们</a> 或发送邮件到<span>v@maoyan.com</span></p>
+      <!-- 下载贴条 -->
+      <div id="download">
+          <div class="dl-cont">
+              <img class="dl-img" src="//ms0.meituan.net/piaofang/img/download-icon-dd2726df.png">
+              <div class="dl-desc">
+                  <h3 class="dl-title">
+                      猫眼专业版
+                  </h3>
+                  <p class="dl-txt">
+                     秒级实时票房随时看
+                  </p>
+              </div>
+          </div>
+          <a class="dl-action" href="/app">立即下载</a>
+          <script>
+              var clientType = '普通浏览器';
+      
+              if (false) clientType = '猫眼App';
+              if (false) clientType = '团购App';
+      
+              document.querySelector('.dl-action').addEventListener('touchstart', function() {
+                  logger('_trackEvent', '下载贴条', '下载', clientType);
+              });
+          </script>
+      </div>
+    </div>
+  </div>
+  <div class="guide-artwork">
+    <div class="guide-top">
+      <div class="guide-desc">
+        <h2>新增影片物料监控</h2>
+        <h3>追踪影片预告文章传播效果</h3>
+      </div>
+      <div class="guide-traingle"></div>
+    </div>
+    <div class="guide-bottom">
+      <div class="guide-read-btn">我知道了</div>
+    </div>
+  </div>  <script id="pageData" type="application/json">
+    {"proSchema":"maoyanpro","wishData":null,"wishRange":{"endDate":20171008,"markingDates":[],"ready":true,"startDate":20140921},"movieId":33,"movieName":"极速天使","movieImg":"http://p0.meituan.net/w.h/movie/34/33.jpg","director":"马楚成","category":"剧情,爱情,动作","preEndDate":"2017年10月10日","releaseInfo":"2011-12-27 周二","boxshowChartData":{"hasData":true}}
+  </script>
+  <script>
+  var __limitFeature = 'false';
+  //bfcache
+  window.addEventListener('pageshow',function (ev){
+      if (ev.persisted) {
+          window.location.reload();
+      }
+  });
+  </script>
+  <script>
+      !function(e,n,t,o){function r(){return a._LXALogNTObject?"hybrid":o?o:/\b(mobile|iphone|htc)\b/gi.test(b)?"mobile":"web"}var a=window,i=document,c="_MeiTuanALogObject";if(a[c]=t,!a[t]){var s=function(){return s.q.push(arguments),s};s.q=s.q||[],s.v=n,s.l=+new Date,s.C=o,a[t]=a[t]||s;var u=i.getElementsByTagName("head")[0],l=i.createElement("script"),b=navigator.userAgent.toLocaleLowerCase(),g=r(),d="";d=e.length-3===e.indexOf(".js")?e:["//",e,"/source/",n,"/",g,".","js"].join(""),l.defer=l.async=!0,l.charset="utf-8",l.src=d,l.onload=l.onerror=function(){},u.appendChild(l)}}("analytics.meituan.com","stable","Analytics","");
+      Analytics('config', 'appnm', 'moviepro');
+      Analytics('config', 'ct', 'i');
+      Analytics('config', 'autoUrlEnv', true)
+      Analytics('use', 'moviepro');
+      Analytics('set', 'cid', '影片详情页');
+      Analytics('send', 'pv', '影片详情页');
+  </script>
+  
+  <script>
+  var isDev=false;
+  var requirejs = {};
+  
+  requirejs.__require = [];
+  var require = function() {
+      requirejs.__require.push(arguments);
+  };
+  
+      var sRev = {"biz/movie/detail.js":"2f1e9096","lib/zepto.js":"f039f967","biz/expandable-container.js":"87e10a2b","component/chart/mychart.helper.js":"231f7ab7","biz/movie/boxshowchart.js":"ddb72035","util/tools.js":"7061807c","lib/fastclick.js":"1a6b078c","util/xnb.js":"99f63fe0","lib/mtnb.js":"b3fc02ad","lib/wechat.js":"2044fc41","util/nAjax.js":"ba169296","util/cookie.js":"e4b7df3e","util/env.js":"0bec12b4","util/linkAction.js":"fbe1e078","component/downloadDialog.js":"e41ad8ae","util/scroller/scroller.js":"50c4a62e","util/debounce.js":"8c472d50","util/listener.js":"f4bc587e","util/scroller/translate.js":"3b97bf73","util/scroller/indicator.js":"946d7c30","util/scroller/ease.js":"8fbbd863","util/scroller/dom-resize.js":"f4924b4a","util/raf.js":"e8c3592a","component/lazyLoad/lazyLoad.js":"8c88d7a1","util/cat-sticky.js":"d35ef44e","util/sharePicSrc.js":"71563533","util/calendar.js":"03f83732","util/calendar/renderMonth.js":"719d8e36","util/calendar/decorator/festival.js":"6c87b7e8","lib/solarlunar.js":"1ce10dc9","util/calendar/decorator/marketing.js":"a9c96b9c","util/weeklist.js":"7c24ddbd","util/calendar/dateArea.js":"e9f55f2d","component/toast.js":"b235a4c0","util/calendar/dateSelectDay.js":"c875a960","bridge/calendar.js":"20f6b87f","util/cityBar.js":"67bb8de0","bridge/citylist.js":"88f93561","util/knb-helper.js":"139483d9","util/msg/msg.js":"fdc254ae","component/hint.js":"9b312642","lib/declareable.js":"dfe43e7d","lib/count.js":"9d05610d","util/gaConfig.js":"81afe990","util/canTouch.js":"998c9c42","util/dateBar.js":"557ec72c","util/hrefTo.js":"cb7d28ae","util/hisBack.js":"80eb97c7","util/cityBox.js":"ebb2cd42","util/query.js":"e01798f5","util/searchInput.js":"e7f03e59","util/slider.js":"1eeebc82","lib/swipe.js":"a0e51ec2","util/lazyload.js":"038b9c8d","util/tab.js":"ed26d156","util/gotoTop.js":"edf416a1","util/uploadIdcard.js":"81a04790","util/switchbutton.js":"f97c7514","util/eventHandler.js":"a26f33a8","util/xslider.js":"59b24cd0","util/wheellist.js":"1a7d2f79","util/twowayTable.js":"df7253d5"};
+      var sDep = {"biz/movie/detail.js":["lib/zepto.js","biz/expandable-container.js","component/chart/mychart.helper.js","biz/movie/boxshowchart.js","lib/fastclick.js","util/xnb.js","util/tools.js","util/linkAction.js","util/env.js","util/scroller/scroller.js","component/lazyLoad/lazyLoad.js","util/cat-sticky.js","util/sharePicSrc.js","util/calendar.js","util/nAjax.js","component/toast.js","util/cityBar.js","util/msg/msg.js","component/hint.js"],"biz/expandable-container.js":["lib/zepto.js"],"component/chart/mychart.helper.js":["lib/zepto.js"],"biz/movie/boxshowchart.js":["lib/zepto.js","util/tools.js"],"util/tools.js":["lib/zepto.js"],"util/xnb.js":["lib/mtnb.js","lib/wechat.js","util/nAjax.js","util/env.js","util/tools.js","util/cookie.js"],"util/nAjax.js":["lib/zepto.js","util/tools.js","util/cookie.js"],"util/linkAction.js":["component/downloadDialog.js"],"component/downloadDialog.js":["lib/zepto.js","util/tools.js"],"util/scroller/scroller.js":["lib/zepto.js","util/debounce.js","util/listener.js","util/scroller/translate.js","util/scroller/indicator.js","util/scroller/ease.js","util/scroller/dom-resize.js","util/raf.js","util/env.js"],"util/scroller/translate.js":["lib/zepto.js","util/listener.js"],"util/scroller/indicator.js":["lib/zepto.js","util/scroller/translate.js","util/debounce.js"],"util/scroller/ease.js":["lib/zepto.js"],"util/scroller/dom-resize.js":["lib/zepto.js"],"component/lazyLoad/lazyLoad.js":["lib/zepto.js","util/raf.js"],"util/cat-sticky.js":["util/raf.js","util/env.js"],"util/calendar.js":["lib/zepto.js","util/calendar/renderMonth.js","util/weeklist.js","util/calendar/dateArea.js","util/calendar/dateSelectDay.js","util/cat-sticky.js","bridge/calendar.js"],"util/calendar/renderMonth.js":["lib/zepto.js","util/tools.js","util/calendar/decorator/festival.js","util/calendar/decorator/marketing.js"],"util/calendar/decorator/festival.js":["lib/solarlunar.js"],"util/calendar/dateArea.js":["lib/zepto.js","component/toast.js"],"component/toast.js":["lib/zepto.js"],"util/calendar/dateSelectDay.js":["lib/zepto.js","component/toast.js"],"bridge/calendar.js":["lib/zepto.js","util/env.js","util/xnb.js"],"util/cityBar.js":["lib/zepto.js","util/tools.js","util/nAjax.js","bridge/citylist.js"],"bridge/citylist.js":["lib/zepto.js","util/knb-helper.js","util/env.js","util/xnb.js"],"util/knb-helper.js":["lib/zepto.js","util/tools.js"],"util/msg/msg.js":["lib/zepto.js"],"component/hint.js":["lib/zepto.js"],"lib/declareable.js":["lib/zepto.js"],"util/gaConfig.js":["lib/zepto.js"],"util/canTouch.js":["lib/zepto.js"],"util/dateBar.js":["lib/zepto.js","util/calendar.js","util/tools.js"],"util/hrefTo.js":["lib/zepto.js"],"util/cityBox.js":["lib/zepto.js","util/query.js"],"util/slider.js":["lib/zepto.js","lib/swipe.js","util/lazyload.js","util/tools.js"],"util/lazyload.js":["lib/zepto.js"],"util/tab.js":["lib/zepto.js"],"util/uploadIdcard.js":["lib/zepto.js","util/nAjax.js","util/env.js","util/xnb.js","component/toast.js"],"util/switchbutton.js":["lib/zepto.js","util/eventHandler.js"],"util/eventHandler.js":["lib/zepto.js"],"util/xslider.js":["lib/zepto.js"],"util/wheellist.js":["lib/zepto.js"],"util/twowayTable.js":["lib/zepto.js","util/env.js","util/scroller/scroller.js"]};
+      requirejs.__requirejsConfig = {
+          baseUrl:'//ms0.meituan.net/',
+          revision:sRev,
+          prefix: 'piaofang/js/',
+          cachePrefix: 'n~', 
+          combo: {
+              url: '//mc.meituan.net/combo/?f=',
+              deps:sDep
+          }
+      };
+  </script>
+  <script src="//ms0.meituan.net/piaofang/js/truck.702f89a9.js" id="truckjsnode" async></script>
+  <script type="text/javascript">
+  require(['lib/declareable.js','lib/count.js','util/gaConfig.js']);
+  </script>
+  <script>require(['biz/movie/detail.js']);</script>
+</body>
+</html>
