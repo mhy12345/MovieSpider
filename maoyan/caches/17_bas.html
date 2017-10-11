@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html class="">
+<head>
+<meta charset="utf-8" />
+<meta name="keywords" content="猫眼票房分析,猫眼电影,电影票房,实时票房,日票房,预售票房,影片票房趋势,受众画像,实时排片,预售排片,上座率,历史票房" />
+<meta name="description" content="猫眼票房分析，提供最准确的每日电影实时票房、排片、上座率查询，为电影从业者提供最及时、专业的数据分析服务" />
+<meta http-equiv="Cache-Control" CONTENT="no-cache" />
+<meta http-equiv="Pragma" CONTENT="no-cache" />
+<meta http-equiv="cache-control" CONTENT="no-store" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="csrf" content="95d6db3dd030c3e90bc45b0fc6eb632c4b8c408b" />
+<link rel="dns-prefetch" href="//analytics.meituan.com" />
+<link rel="dns-prefetch" href="//ms0.meituan.net" />
+<link rel="dns-prefetch" href="//mc.meituan.net" />
+<link rel="dns-prefetch" href="//s0.meituan.net" />
+<link rel="dns-prefetch" href="//p0.meituan.net" />
+<link rel="dns-prefetch" href="//p1.meituan.net" />
+<link rel="apple-touch-icon" href="//ms0.meituan.net/piaofang/img/wx_pic-daf3a7c4.png" />
+<link rel="icon" type="image/x-icon" href="//ms0.meituan.net/piaofang/img/favicon-f8defb48.ico" />
+<meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, user-scalable=no">
+<link rel="shortcut icon" type="image/x-icon" href="//ms0.meituan.net/piaofang/img/favicon-f8defb48.ico" />
+
+
+<style id="js-nuwa">
+  @font-face{font-family:"cs";src:url(data:application/font-woff;charset=utf-8;base64,d09GRgABAAAAAAgkAAsAAAAAC7gAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABHU1VCAAABCAAAADMAAABCsP6z7U9TLzIAAAE8AAAARAAAAFZW7lKRY21hcAAAAYAAAAC8AAACTArOHgNnbHlmAAACPAAAA5UAAAQ0l9+jTWhlYWQAAAXUAAAALwAAADYPJX9QaGhlYQAABgQAAAAcAAAAJAeKAzlobXR4AAAGIAAAABIAAAAwGhwAAGxvY2EAAAY0AAAAGgAAABoGBgUAbWF4cAAABlAAAAAfAAAAIAEZADxuYW1lAAAGcAAAAVcAAAKFkAhoC3Bvc3QAAAfIAAAAWwAAAI8GSKGreJxjYGRgYOBikGPQYWB0cfMJYeBgYGGAAJAMY05meiJQDMoDyrGAaQ4gZoOIAgCKIwNPAHicY2Bk0mWcwMDKwMHUyXSGgYGhH0IzvmYwYuRgYGBiYGVmwAoC0lxTGBwYKj5LMev812GIYdZhuAIUZgTJAQDY8gsfeJzFkjEOgzAMRX8KpRQ6VGKpEBIX6D24ElygG1tP0qkH4BgMiJCBEbEi0R/MUgnW1tGLZCexLf8AOAJwyJ24gHpDwdqLUbXEHQRL3MWD/g1XRnzkTdWmutBTV5vElH02RGM8z7yxf7Jlihm3lj0J4LG/kJUPrHnGiXWhvJ1MPzD1v9Lfdln25+qFJF9hi00lWN3aVOAkoQvBaq4nwb7tasHqbxKBE4cpBfs/+kygChgigXpgjAX4H4j2QMR4nDWTz3MSZxzG3xec3UiQENllhSiwLNldliRs9hcBNoBsQPOTkgAhRDFkFDGtmmaMjZppFVtn1OkfYC/OeOjF6cG7nenUU7XT5tA/oDO99lZnvGSg7xKyt3ffed/n8z7P8wUQgO6/QAIEsAAQk0nCR/AAfWjV/QgPLX+iHT8ALiWWgrJEuSk3SWC4AzJBjo0RbklzcmwQxwSPt7W0kzzrdNodI9cK1/V8rXh/ReAfhMZhoz23VFoXMvrNdJNbWpmrfnhzZxduJBNyFgBoisFdpGMHgGaGHRBXNaQVk+FuNdDiZ6dG+MG4RfTpznJQ8ogUOD7zCZ0JATBK0ojNah7RFJYJYjiXglKfEndYcfipww3aRvg4myiQ4Xk9vQBrJ/f+2KMjhCHyEnV6oFTy+zzRqBoQ585NXZudy9uaN3bK44sSlebp8TPUqSPN7n+wizQjyCcf8kJTOCSHxyhJU/vCWkxDHvkg0vZBRMAEWa49dEFLlbmw7g3ZHPG1tCbP2KrOeKKUkCZVaTJ94Wnryv7J3+azlX2Oty3C5LSYTmWHatFJ75nqxrx76FL+8uPtWj8TBHJo+R3YAGKiVVqF8rBMMiQ3bIVG5z3MX2w0qn+/LsKDjlh8fYj+/dxn/2g5YfnVTLLPfgTsokkaN4NFfuGYmSn3xDarZaoVI2IQKzl4tfMPF5hh6o/iua82p1MD73LZzRcV1m+D26Vf3NSj6xsXV7Wp2nFfOsifABhDkmzPHDMDsn+/2RlWVXoWuSlI9DiQc0EM/mAnQ4oQECj7qcC6vLqfuJq99WzB+LKsqfbOCy7HasXC3ZLFrVCjlD9+bkWbnGg3jTvTL98e1JfFiVLnw1g5UlucXa30u9G1vAMu1FqVJlEDMJwx22FWJAoPGGNGdnkG1uGw05/0ZWjLrXIu1Lj3IFP7XGjqe7fjl1h0hbXnGej3fxzdhdi1nk+9aJFVaI0mQJbM3gUxK4FmA73oaPXmi+23O1vZXPuv85m8mFVEhjaa588GR4PhgEyGS18X4bf81mc3bi+0ePeV7OX9lN7I139U0gF/3ch0nnI5wkUS3MPl4vEs9lgYEO0niN6SgtNQ4TAzN5NFlkywo8nkYC9gkqDQhD4f1EUhyTkwHHqiY7G1+99szuzqybuFsqLZYGt5KlkJC/cKP+nqaEr1aiMDJzDB6324dfO7+e/bz16VJ6JlmFxYqy/lw5FVhPM/fPbgwgAAAHicY2BkYGAA4pzpYdfj+W2+MnCzMIDANWbZMwj6/xsWBqbzQC4HAxNIFAAhuwovAHicY2BkYGDW+a/DEMPCAAJAkpEBFfAAADNiAc14nGNhAIIUBgYmHeIwADeMAjUAAAAAAAAADABAAFoAlADWAPIBJAFoAYwB0gIaAAB4nGNgZGBg4GEwYGBmAAEmIOYCQgaG/2A+AwAOgwFWAHicZZG7bsJAFETHPPIAKUKJlCaKtE3SEMxDqVA6JCgjUdAbswYjv7RekEiXD8h35RPSpcsnpM9grhvHK++eOzN3fSUDuMY3HJyee74ndnDB6sQ1nONBuE79SbhBfhZuoo0X4TPqM+EWungVbuMGb7zBaVyyGuND2EEHn8I1XOFLuE79R7hB/hVu4tZpCp+h49wJt7BwusJtPDrvLaUmRntWr9TyoII0sT3fMybUhk7op8lRmuv1LvJMWZbnQps8TBM1dAelNNOJNuVt+X49sjZQgUljNaWroyhVmUm32rfuxtps3O8Hort+GnM8xTWBgYYHy33FeokD9wApEmo9+PQMV0jfSE9I9eiXqTm9NXaIimzVrdaL4qac+rFWGMLF4F9qxlRSJKuz5djzayOqlunjrIY9MWkqvZqTRGSFrPC2VHzqLjZFV8af3ecKKnm3mCH+A9idcsEAeJxtyjsOgCAQBNAdfyjiXVzBIKUBuYuNnYnHNy6t07zMZKiiEk3/MahQo0GLDgo9BmiMMJgIj7qv81g5FrckulS69UFcOH9mZita3mUPzotzdOWfI9ELG5cXjAA=) format("woff");}
+.cs{font-family:cs}
+</style>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', function() {
+    var images = document.querySelectorAll('.need-handle-pic');
+    for(var i = 0; i < images.length; i++) {
+        var imgItem = images[i];
+        var className = imgItem.className;
+        var src = imgItem.getAttribute('src');
+        if (!src) {
+            imgItem.className = className + ' has-no-pic';
+            imgItem.setAttribute('alt', '');
+        } else {
+            imgItem.onerror = function(e) {
+                imgItem.className = className + ' has-error-pic';
+                imgItem.setAttribute('src', '');
+                imgItem.setAttribute('alt', '');
+            }
+        }
+    }
+});
+</script>
+<link rel="stylesheet" type="text/css" href="//ms0.meituan.net/piaofang/css/movie/detail.e2e3d185.css" />
+<title>爱有来生</title>
+</head>
+<body class="has-bar">
+  <div id="wx_pic" style="display:none;">
+      <img src="//ms0.meituan.net/piaofang/img/wx_pic-daf3a7c4.png"/>
+  </div>
+  <header class="navBar ">
+  	<div class="nav-wrap-left">
+  		<a id="rank-back" data-com="hisBack" class="back">
+  			<i class="text-icon icon-back"></i>
+  		</a>
+  	</div>
+      <h1 class="nav-header navBarTitle">爱有来生</h1>
+  </header>
+  <div class="scroller">
+    <div class="wrapper">
+      <div class="sections">
+        <section class="summary-section">
+  <div class="movie-baseinfo">
+    <div class="movie-bg-img" style="background-image:url(//p0.meituan.net/movie/18/17_1.jpg@165w_220h)"></div>
+    <div class="movie-bg-color"></div>
+    <div class="movie-container">
+      <div class="info-base">
+        <div class="info-poster">
+          <img src="//p0.meituan.net/movie/18/17_1.jpg@165w_220h" alt="爱有来生" class="need-handle-pic"/>
+        </div>
+        <div class="info-moviecompare info-block center">
+          <span class="img"></span>
+          <span class="txt">影片对比</span>
+        </div>
+        <div class="info-detail">
+          <p class="info-title">
+            <span>爱有来生</span>
+          </p>
+          <p class="info-etitle">Eternal Beloved</p>
+          <p class="info-category">
+            
+            爱情,剧情
+          </p>
+          <p class="info-source-duration">
+            中国大陆
+              /
+              <span>96分钟</span>
+          </p>
+          <a class="info-release"
+            href="/movie/17/releaselist">
+            <span>2009-09-03大陆上映</span>
+              <span class="score-arrow"></span>
+          </a>
+          <p class="info-wish">
+            <span class="wish-num ">
+              <span class="info-wish-num">9</span>
+              <span class="info-wish-desc">人想看</span>
+            </span>
+          </p>
+        </div>
+      </div>
+        <div class="info-score">
+        <a class="info-score-persona info-block"
+          href="javascript:void 0">
+          <span class="logo"></span>
+          <span class="split"></span>
+          <div class="scores">
+              <div class="percentbar">
+                <span class="percentbar-label">9-10分</span>
+                <div class="percentbar-all">
+                  <div class="percentbar-fill" style="width:0"></div>
+                </div>
+                <span class="percentbar-val">--</span>
+              </div>
+              <div class="percentbar">
+                <span class="percentbar-label">5-8分</span>
+                <div class="percentbar-all">
+                  <div class="percentbar-fill" style="width:0"></div>
+                </div>
+                <span class="percentbar-val">--</span>
+              </div>
+              <div class="percentbar">
+                <span class="percentbar-label">1-4分</span>
+                <div class="percentbar-all">
+                  <div class="percentbar-fill" style="width:0"></div>
+                </div>
+                <span class="percentbar-val">--</span>
+              </div>
+          </div>
+        </a>
+        <a href="https://m.maoyan.com/movie/17/comments?_v_&#x3D;yes">
+            <div class="info-score-total info-block">
+              <span class="title release"></span>
+              <div class="rating-stars">
+                  <span class="rating-num">7.4</span>
+                  <span class="rating-star fullstar"></span>
+                  <span class="rating-star fullstar"></span>
+                  <span class="rating-star fullstar"></span>
+                  <span class="rating-star halfstar"></span>
+                  <span class="rating-star star"></span>
+              </div>
+                <p class="value">81人
+            </div>
+        </a>
+        </div>
+        <div class="info-box-summary info-block">
+          <span class="emspan">累计综合票房<em>490.0</em>万</span>
+          <div class="forecast">
+            <span class="emspan">预测总票房<em>--</em></span>
+          </div>
+        </div>
+        <div class="info-splitbox-summary info-block">
+          <div class="info-sb-total">
+            <div>
+              <span>累计分账票房</span>
+              <div class="hint-area center">
+                <span class="hint"></span>
+              </div>
+            </div>
+            <span class="emspan"><em>490.0</em>万</span>
+          </div>
+          <div class="info-sb-routings">
+              <div class="info-sb-split"></div>
+              <div class="info-sb-item center">
+                <p class="info-sb-percent">片方(36.68%)</p>
+                <p class="info-sb-num">
+                  <span class="num">179.7</span>
+                  <span class="unit">万</span>
+                </p>
+              </div>
+              <div class="info-sb-split"></div>
+              <div class="info-sb-item center">
+                <p class="info-sb-percent">影院(52.27%)</p>
+                <p class="info-sb-num">
+                  <span class="num">256.1</span>
+                  <span class="unit">万</span>
+                </p>
+              </div>
+              <div class="info-sb-split"></div>
+              <div class="info-sb-item center">
+                <p class="info-sb-percent">其他(11.05%)</p>
+                <p class="info-sb-num">
+                  <span class="num">54.1</span>
+                  <span class="unit">万</span>
+                </p>
+              </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</section>
+
+        <div class="section-group ">
+          <div class="section-group">
+            <section class="box-section">
+    <div class="t-table">
+      <div class="t-main-col">
+        <div class="t-header">
+          <div class="t-col">
+            <div>日期</div><div class="holder">(万元)</div>
+          </div>
+        </div>
+          <div class="t-row">
+            <div class="t-col">
+              <span><b>2009-09-03</b><br/>周四<em style="color:rgba(255,153,0, 1.00)">上映首日</em></span>
+            </div>
+          </div>
+      </div>
+      <div class="t-other-col">
+        <div class="t-change-wrapper">
+          <div class="t-change">
+            <div class="t-header">
+                <div class="t-col">
+                    <div>分账票房</div><div class="unit">(万元)</div>
+                </div>
+                <div class="t-col">
+                    <div>分账票房</div><div class="unit">占比</div>
+                </div>
+                <div class="t-col">
+                    <div>排片占比</div><div class="holder">(万元)</div>
+                </div>
+                <div class="t-col">
+                    <div>场均人次</div><div class="holder">(万元)</div>
+                </div>
+            </div>
+              <div class="t-row">
+                  <div class="t-col"><i class="cs">&#xe21f;&#xe3fc;&#xe51c;.&#xe51c;</i></div>
+                  <div class="t-col"><i class="cs">--</i></div>
+                  <div class="t-col"><i class="cs">&#xe58d;&#xe51c;&#xe51c;.&#xe51c;%</i></div>
+                  <div class="t-col"><i class="cs">&#xe58d;&#xe21f;</i></div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a href="/movie/17/boxshow">
+      <div class="more-link">
+        <span>查看全部日期和指标</span>
+        <div class="arrowicon right red">
+        </div>  </div>
+    </a>
+</section>
+
+            
+          </div>
+          <div class="section-group">
+            
+            
+            
+          </div>
+        </div>
+      </div>
+      <!-- 意见反馈 -->
+      <p class="feedback">*丰富信息请 <a href="http://survey.meituan.com/?r=survey/index/sid/197988/lang/zh-Hans">联系我们</a> 或发送邮件到<span>v@maoyan.com</span></p>
+      <!-- 下载贴条 -->
+      <div id="download">
+          <div class="dl-cont">
+              <img class="dl-img" src="//ms0.meituan.net/piaofang/img/download-icon-dd2726df.png">
+              <div class="dl-desc">
+                  <h3 class="dl-title">
+                      猫眼专业版
+                  </h3>
+                  <p class="dl-txt">
+                     秒级实时票房随时看
+                  </p>
+              </div>
+          </div>
+          <a class="dl-action" href="/app">立即下载</a>
+          <script>
+              var clientType = '普通浏览器';
+      
+              if (false) clientType = '猫眼App';
+              if (false) clientType = '团购App';
+      
+              document.querySelector('.dl-action').addEventListener('touchstart', function() {
+                  logger('_trackEvent', '下载贴条', '下载', clientType);
+              });
+          </script>
+      </div>
+    </div>
+  </div>
+  <div class="guide-artwork">
+    <div class="guide-top">
+      <div class="guide-desc">
+        <h2>新增影片物料监控</h2>
+        <h3>追踪影片预告文章传播效果</h3>
+      </div>
+      <div class="guide-traingle"></div>
+    </div>
+    <div class="guide-bottom">
+      <div class="guide-read-btn">我知道了</div>
+    </div>
+  </div>  <script id="pageData" type="application/json">
+    {"proSchema":"maoyanpro","wishData":null,"wishRange":{"endDate":20170909,"markingDates":[],"ready":true,"startDate":20140720},"movieId":17,"movieName":"爱有来生","movieImg":"http://p0.meituan.net/w.h/movie/18/17_1.jpg","director":"俞飞鸿","category":"爱情,剧情","preEndDate":"2017年10月10日","releaseInfo":"2009-09-03 周四","boxshowChartData":{"hasData":false}}
+  </script>
+  <script>
+  var __limitFeature = 'false';
+  //bfcache
+  window.addEventListener('pageshow',function (ev){
+      if (ev.persisted) {
+          window.location.reload();
+      }
+  });
+  </script>
+  <script>
+      !function(e,n,t,o){function r(){return a._LXALogNTObject?"hybrid":o?o:/\b(mobile|iphone|htc)\b/gi.test(b)?"mobile":"web"}var a=window,i=document,c="_MeiTuanALogObject";if(a[c]=t,!a[t]){var s=function(){return s.q.push(arguments),s};s.q=s.q||[],s.v=n,s.l=+new Date,s.C=o,a[t]=a[t]||s;var u=i.getElementsByTagName("head")[0],l=i.createElement("script"),b=navigator.userAgent.toLocaleLowerCase(),g=r(),d="";d=e.length-3===e.indexOf(".js")?e:["//",e,"/source/",n,"/",g,".","js"].join(""),l.defer=l.async=!0,l.charset="utf-8",l.src=d,l.onload=l.onerror=function(){},u.appendChild(l)}}("analytics.meituan.com","stable","Analytics","");
+      Analytics('config', 'appnm', 'moviepro');
+      Analytics('config', 'ct', 'i');
+      Analytics('config', 'autoUrlEnv', true)
+      Analytics('use', 'moviepro');
+      Analytics('set', 'cid', '影片详情页');
+      Analytics('send', 'pv', '影片详情页');
+  </script>
+  
+  <script>
+  var isDev=false;
+  var requirejs = {};
+  
+  requirejs.__require = [];
+  var require = function() {
+      requirejs.__require.push(arguments);
+  };
+  
+      var sRev = {"biz/movie/detail.js":"2f1e9096","lib/zepto.js":"f039f967","biz/expandable-container.js":"87e10a2b","component/chart/mychart.helper.js":"231f7ab7","biz/movie/boxshowchart.js":"ddb72035","util/tools.js":"7061807c","lib/fastclick.js":"1a6b078c","util/xnb.js":"99f63fe0","lib/mtnb.js":"b3fc02ad","lib/wechat.js":"2044fc41","util/nAjax.js":"ba169296","util/cookie.js":"e4b7df3e","util/env.js":"0bec12b4","util/linkAction.js":"fbe1e078","component/downloadDialog.js":"e41ad8ae","util/scroller/scroller.js":"50c4a62e","util/debounce.js":"8c472d50","util/listener.js":"f4bc587e","util/scroller/translate.js":"3b97bf73","util/scroller/indicator.js":"946d7c30","util/scroller/ease.js":"8fbbd863","util/scroller/dom-resize.js":"f4924b4a","util/raf.js":"e8c3592a","component/lazyLoad/lazyLoad.js":"8c88d7a1","util/cat-sticky.js":"d35ef44e","util/sharePicSrc.js":"71563533","util/calendar.js":"03f83732","util/calendar/renderMonth.js":"719d8e36","util/calendar/decorator/festival.js":"6c87b7e8","lib/solarlunar.js":"1ce10dc9","util/calendar/decorator/marketing.js":"a9c96b9c","util/weeklist.js":"7c24ddbd","util/calendar/dateArea.js":"e9f55f2d","component/toast.js":"b235a4c0","util/calendar/dateSelectDay.js":"c875a960","bridge/calendar.js":"20f6b87f","util/cityBar.js":"67bb8de0","bridge/citylist.js":"88f93561","util/knb-helper.js":"139483d9","util/msg/msg.js":"fdc254ae","component/hint.js":"9b312642","lib/declareable.js":"dfe43e7d","lib/count.js":"9d05610d","util/gaConfig.js":"81afe990","util/canTouch.js":"998c9c42","util/dateBar.js":"557ec72c","util/hrefTo.js":"cb7d28ae","util/hisBack.js":"80eb97c7","util/cityBox.js":"ebb2cd42","util/query.js":"e01798f5","util/searchInput.js":"e7f03e59","util/slider.js":"1eeebc82","lib/swipe.js":"a0e51ec2","util/lazyload.js":"038b9c8d","util/tab.js":"ed26d156","util/gotoTop.js":"edf416a1","util/uploadIdcard.js":"81a04790","util/switchbutton.js":"f97c7514","util/eventHandler.js":"a26f33a8","util/xslider.js":"59b24cd0","util/wheellist.js":"1a7d2f79","util/twowayTable.js":"df7253d5"};
+      var sDep = {"biz/movie/detail.js":["lib/zepto.js","biz/expandable-container.js","component/chart/mychart.helper.js","biz/movie/boxshowchart.js","lib/fastclick.js","util/xnb.js","util/tools.js","util/linkAction.js","util/env.js","util/scroller/scroller.js","component/lazyLoad/lazyLoad.js","util/cat-sticky.js","util/sharePicSrc.js","util/calendar.js","util/nAjax.js","component/toast.js","util/cityBar.js","util/msg/msg.js","component/hint.js"],"biz/expandable-container.js":["lib/zepto.js"],"component/chart/mychart.helper.js":["lib/zepto.js"],"biz/movie/boxshowchart.js":["lib/zepto.js","util/tools.js"],"util/tools.js":["lib/zepto.js"],"util/xnb.js":["lib/mtnb.js","lib/wechat.js","util/nAjax.js","util/env.js","util/tools.js","util/cookie.js"],"util/nAjax.js":["lib/zepto.js","util/tools.js","util/cookie.js"],"util/linkAction.js":["component/downloadDialog.js"],"component/downloadDialog.js":["lib/zepto.js","util/tools.js"],"util/scroller/scroller.js":["lib/zepto.js","util/debounce.js","util/listener.js","util/scroller/translate.js","util/scroller/indicator.js","util/scroller/ease.js","util/scroller/dom-resize.js","util/raf.js","util/env.js"],"util/scroller/translate.js":["lib/zepto.js","util/listener.js"],"util/scroller/indicator.js":["lib/zepto.js","util/scroller/translate.js","util/debounce.js"],"util/scroller/ease.js":["lib/zepto.js"],"util/scroller/dom-resize.js":["lib/zepto.js"],"component/lazyLoad/lazyLoad.js":["lib/zepto.js","util/raf.js"],"util/cat-sticky.js":["util/raf.js","util/env.js"],"util/calendar.js":["lib/zepto.js","util/calendar/renderMonth.js","util/weeklist.js","util/calendar/dateArea.js","util/calendar/dateSelectDay.js","util/cat-sticky.js","bridge/calendar.js"],"util/calendar/renderMonth.js":["lib/zepto.js","util/tools.js","util/calendar/decorator/festival.js","util/calendar/decorator/marketing.js"],"util/calendar/decorator/festival.js":["lib/solarlunar.js"],"util/calendar/dateArea.js":["lib/zepto.js","component/toast.js"],"component/toast.js":["lib/zepto.js"],"util/calendar/dateSelectDay.js":["lib/zepto.js","component/toast.js"],"bridge/calendar.js":["lib/zepto.js","util/env.js","util/xnb.js"],"util/cityBar.js":["lib/zepto.js","util/tools.js","util/nAjax.js","bridge/citylist.js"],"bridge/citylist.js":["lib/zepto.js","util/knb-helper.js","util/env.js","util/xnb.js"],"util/knb-helper.js":["lib/zepto.js","util/tools.js"],"util/msg/msg.js":["lib/zepto.js"],"component/hint.js":["lib/zepto.js"],"lib/declareable.js":["lib/zepto.js"],"util/gaConfig.js":["lib/zepto.js"],"util/canTouch.js":["lib/zepto.js"],"util/dateBar.js":["lib/zepto.js","util/calendar.js","util/tools.js"],"util/hrefTo.js":["lib/zepto.js"],"util/cityBox.js":["lib/zepto.js","util/query.js"],"util/slider.js":["lib/zepto.js","lib/swipe.js","util/lazyload.js","util/tools.js"],"util/lazyload.js":["lib/zepto.js"],"util/tab.js":["lib/zepto.js"],"util/uploadIdcard.js":["lib/zepto.js","util/nAjax.js","util/env.js","util/xnb.js","component/toast.js"],"util/switchbutton.js":["lib/zepto.js","util/eventHandler.js"],"util/eventHandler.js":["lib/zepto.js"],"util/xslider.js":["lib/zepto.js"],"util/wheellist.js":["lib/zepto.js"],"util/twowayTable.js":["lib/zepto.js","util/env.js","util/scroller/scroller.js"]};
+      requirejs.__requirejsConfig = {
+          baseUrl:'//ms0.meituan.net/',
+          revision:sRev,
+          prefix: 'piaofang/js/',
+          cachePrefix: 'n~', 
+          combo: {
+              url: '//mc.meituan.net/combo/?f=',
+              deps:sDep
+          }
+      };
+  </script>
+  <script src="//ms0.meituan.net/piaofang/js/truck.702f89a9.js" id="truckjsnode" async></script>
+  <script type="text/javascript">
+  require(['lib/declareable.js','lib/count.js','util/gaConfig.js']);
+  </script>
+  <script>require(['biz/movie/detail.js']);</script>
+</body>
+</html>

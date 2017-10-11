@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html class="">
+<head>
+<meta charset="utf-8" />
+<meta name="keywords" content="猫眼票房分析,猫眼电影,电影票房,实时票房,日票房,预售票房,影片票房趋势,受众画像,实时排片,预售排片,上座率,历史票房" />
+<meta name="description" content="猫眼票房分析，提供最准确的每日电影实时票房、排片、上座率查询，为电影从业者提供最及时、专业的数据分析服务" />
+<meta http-equiv="Cache-Control" CONTENT="no-cache" />
+<meta http-equiv="Pragma" CONTENT="no-cache" />
+<meta http-equiv="cache-control" CONTENT="no-store" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="csrf" content="95d6db3dd030c3e90bc45b0fc6eb632c4b8c408b" />
+<link rel="dns-prefetch" href="//analytics.meituan.com" />
+<link rel="dns-prefetch" href="//ms0.meituan.net" />
+<link rel="dns-prefetch" href="//mc.meituan.net" />
+<link rel="dns-prefetch" href="//s0.meituan.net" />
+<link rel="dns-prefetch" href="//p0.meituan.net" />
+<link rel="dns-prefetch" href="//p1.meituan.net" />
+<link rel="apple-touch-icon" href="//ms0.meituan.net/piaofang/img/wx_pic-daf3a7c4.png" />
+<link rel="icon" type="image/x-icon" href="//ms0.meituan.net/piaofang/img/favicon-f8defb48.ico" />
+<meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, user-scalable=no">
+<link rel="shortcut icon" type="image/x-icon" href="//ms0.meituan.net/piaofang/img/favicon-f8defb48.ico" />
+
+
+<style id="js-nuwa">
+  @font-face{font-family:"cs";src:url(data:application/font-woff;charset=utf-8;base64,d09GRgABAAAAAAgkAAsAAAAAC7gAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABHU1VCAAABCAAAADMAAABCsP6z7U9TLzIAAAE8AAAARAAAAFZW7lKRY21hcAAAAYAAAAC8AAACTArOHgNnbHlmAAACPAAAA5UAAAQ0l9+jTWhlYWQAAAXUAAAALwAAADYPJX9QaGhlYQAABgQAAAAcAAAAJAeKAzlobXR4AAAGIAAAABIAAAAwGhwAAGxvY2EAAAY0AAAAGgAAABoGBgUAbWF4cAAABlAAAAAfAAAAIAEZADxuYW1lAAAGcAAAAVcAAAKFkAhoC3Bvc3QAAAfIAAAAWwAAAI8GSKGreJxjYGRgYOBikGPQYWB0cfMJYeBgYGGAAJAMY05meiJQDMoDyrGAaQ4gZoOIAgCKIwNPAHicY2Bk0mWcwMDKwMHUyXSGgYGhH0IzvmYwYuRgYGBiYGVmwAoC0lxTGBwYKj5LMev812GIYdZhuAIUZgTJAQDY8gsfeJzFkjEOgzAMRX8KpRQ6VGKpEBIX6D24ElygG1tP0qkH4BgMiJCBEbEi0R/MUgnW1tGLZCexLf8AOAJwyJ24gHpDwdqLUbXEHQRL3MWD/g1XRnzkTdWmutBTV5vElH02RGM8z7yxf7Jlihm3lj0J4LG/kJUPrHnGiXWhvJ1MPzD1v9Lfdln25+qFJF9hi00lWN3aVOAkoQvBaq4nwb7tasHqbxKBE4cpBfs/+kygChgigXpgjAX4H4j2QMR4nDWTz3MSZxzG3xec3UiQENllhSiwLNldliRs9hcBNoBsQPOTkgAhRDFkFDGtmmaMjZppFVtn1OkfYC/OeOjF6cG7nenUU7XT5tA/oDO99lZnvGSg7xKyt3ffed/n8z7P8wUQgO6/QAIEsAAQk0nCR/AAfWjV/QgPLX+iHT8ALiWWgrJEuSk3SWC4AzJBjo0RbklzcmwQxwSPt7W0kzzrdNodI9cK1/V8rXh/ReAfhMZhoz23VFoXMvrNdJNbWpmrfnhzZxduJBNyFgBoisFdpGMHgGaGHRBXNaQVk+FuNdDiZ6dG+MG4RfTpznJQ8ogUOD7zCZ0JATBK0ojNah7RFJYJYjiXglKfEndYcfipww3aRvg4myiQ4Xk9vQBrJ/f+2KMjhCHyEnV6oFTy+zzRqBoQ585NXZudy9uaN3bK44sSlebp8TPUqSPN7n+wizQjyCcf8kJTOCSHxyhJU/vCWkxDHvkg0vZBRMAEWa49dEFLlbmw7g3ZHPG1tCbP2KrOeKKUkCZVaTJ94Wnryv7J3+azlX2Oty3C5LSYTmWHatFJ75nqxrx76FL+8uPtWj8TBHJo+R3YAGKiVVqF8rBMMiQ3bIVG5z3MX2w0qn+/LsKDjlh8fYj+/dxn/2g5YfnVTLLPfgTsokkaN4NFfuGYmSn3xDarZaoVI2IQKzl4tfMPF5hh6o/iua82p1MD73LZzRcV1m+D26Vf3NSj6xsXV7Wp2nFfOsifABhDkmzPHDMDsn+/2RlWVXoWuSlI9DiQc0EM/mAnQ4oQECj7qcC6vLqfuJq99WzB+LKsqfbOCy7HasXC3ZLFrVCjlD9+bkWbnGg3jTvTL98e1JfFiVLnw1g5UlucXa30u9G1vAMu1FqVJlEDMJwx22FWJAoPGGNGdnkG1uGw05/0ZWjLrXIu1Lj3IFP7XGjqe7fjl1h0hbXnGej3fxzdhdi1nk+9aJFVaI0mQJbM3gUxK4FmA73oaPXmi+23O1vZXPuv85m8mFVEhjaa588GR4PhgEyGS18X4bf81mc3bi+0ePeV7OX9lN7I139U0gF/3ch0nnI5wkUS3MPl4vEs9lgYEO0niN6SgtNQ4TAzN5NFlkywo8nkYC9gkqDQhD4f1EUhyTkwHHqiY7G1+99szuzqybuFsqLZYGt5KlkJC/cKP+nqaEr1aiMDJzDB6324dfO7+e/bz16VJ6JlmFxYqy/lw5FVhPM/fPbgwgAAAHicY2BkYGAA4pzpYdfj+W2+MnCzMIDANWbZMwj6/xsWBqbzQC4HAxNIFAAhuwovAHicY2BkYGDW+a/DEMPCAAJAkpEBFfAAADNiAc14nGNhAIIUBgYmHeIwADeMAjUAAAAAAAAADABAAFoAlADWAPIBJAFoAYwB0gIaAAB4nGNgZGBg4GEwYGBmAAEmIOYCQgaG/2A+AwAOgwFWAHicZZG7bsJAFETHPPIAKUKJlCaKtE3SEMxDqVA6JCgjUdAbswYjv7RekEiXD8h35RPSpcsnpM9grhvHK++eOzN3fSUDuMY3HJyee74ndnDB6sQ1nONBuE79SbhBfhZuoo0X4TPqM+EWungVbuMGb7zBaVyyGuND2EEHn8I1XOFLuE79R7hB/hVu4tZpCp+h49wJt7BwusJtPDrvLaUmRntWr9TyoII0sT3fMybUhk7op8lRmuv1LvJMWZbnQps8TBM1dAelNNOJNuVt+X49sjZQgUljNaWroyhVmUm32rfuxtps3O8Hort+GnM8xTWBgYYHy33FeokD9wApEmo9+PQMV0jfSE9I9eiXqTm9NXaIimzVrdaL4qac+rFWGMLF4F9qxlRSJKuz5djzayOqlunjrIY9MWkqvZqTRGSFrPC2VHzqLjZFV8af3ecKKnm3mCH+A9idcsEAeJxtyjsOgCAQBNAdfyjiXVzBIKUBuYuNnYnHNy6t07zMZKiiEk3/MahQo0GLDgo9BmiMMJgIj7qv81g5FrckulS69UFcOH9mZita3mUPzotzdOWfI9ELG5cXjAA=) format("woff");}
+.cs{font-family:cs}
+</style>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', function() {
+    var images = document.querySelectorAll('.need-handle-pic');
+    for(var i = 0; i < images.length; i++) {
+        var imgItem = images[i];
+        var className = imgItem.className;
+        var src = imgItem.getAttribute('src');
+        if (!src) {
+            imgItem.className = className + ' has-no-pic';
+            imgItem.setAttribute('alt', '');
+        } else {
+            imgItem.onerror = function(e) {
+                imgItem.className = className + ' has-error-pic';
+                imgItem.setAttribute('src', '');
+                imgItem.setAttribute('alt', '');
+            }
+        }
+    }
+});
+</script>
+<link rel="stylesheet" type="text/css" href="//ms0.meituan.net/piaofang/css/movie/companylist.0a7c64eb.css" />
+<title>参与公司-赤壁（下）</title>
+</head>
+<body class="has-bar" data-ymd="">
+  <div id="wx_pic" style="display:none;">
+      <img src="//ms0.meituan.net/piaofang/img/wx_pic-daf3a7c4.png"/>
+  </div>
+  <header class="navBar ">
+  	<div class="nav-wrap-left">
+  		<a id="rank-back" data-com="hisBack" class="back">
+  			<i class="text-icon icon-back"></i>
+  		</a>
+  	</div>
+      <h1 class="nav-header navBarTitle">参与公司-赤壁（下）</h1>
+  </header>
+  <div class="sticky-container">
+    <div class="scroller cat-wrapper">
+      <div class="wrapper cat-content">
+          <div class="panel-wrapper" id="panelWrapper">
+            <dl class="panel-main category">
+              <dt class="panel-header sticky-wrapper">
+                <div class="panel-title need-sticky more-up" data-index="0">
+                  <span class="title-left">
+                    <span class="title-name">出品</span>
+                    <em class="title-count">(3)</em></span>
+                  <span class="panel-arrow"></span>
+                </div>
+              </dt>
+              <dd class="panel-content" >
+                <div class="panel-c">
+                    <div class="p-item">
+                        <div class="p-link" data-id="25">
+                          <div class="p-item-m p-item-left lazyload default_company" data-src="//p1.meituan.net/movie/7fed6b6c45525c617115eceddd2face110262.jpg@120w_172h">
+                            
+                          </div>
+                          <div class="p-desc">
+                              <p class="p-item-name ellipsis-1">中国电影集团公司</p>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="p-item">
+                        <div class="p-link" data-id="50">
+                          <div class="p-item-m p-item-left lazyload default_company" data-src="//p0.meituan.net/movie/d782f702f68de0a4c97183e5193e03d89886.png@120w_172h">
+                            <div class="p-item-extra">北京电影</div>
+                          </div>
+                          <div class="p-desc">
+                              <p class="p-item-name ellipsis-1">北京电影制片厂</p>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="p-item">
+                        <div class="p-link" data-id="51">
+                          <div class="p-item-m p-item-left lazyload default_company" data-src="//p0.meituan.net/movie/b4cced6f0f0f630c533a4e746ef83df510778.png@120w_172h">
+                            <div class="p-item-extra">狮子山制</div>
+                          </div>
+                          <div class="p-desc">
+                              <p class="p-item-name ellipsis-1">狮子山制作有限公司</p>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+              </dd>
+            </dl>
+            <dl class="panel-main category">
+              <dt class="panel-header sticky-wrapper">
+                <div class="panel-title need-sticky more-down" data-index="1">
+                  <span class="title-left">
+                    <span class="title-name">联合出品</span>
+                    <em class="title-count">(13)</em></span>
+                  <span class="panel-arrow"></span>
+                </div>
+              </dt>
+              <dd class="panel-content" style="display:none;">
+                <div class="panel-c">
+                    <div class="p-item">
+                        <div class="p-link" data-id="101">
+                          <div class="p-item-m p-item-left lazyload default_company" data-src="//p1.meituan.net/movie/90faf3266bc32f0c6b94e597a395aca422352.png@120w_172h">
+                            
+                          </div>
+                          <div class="p-desc">
+                              <p class="p-item-name ellipsis-1">上海电影（集团）有限公司</p>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="p-item">
+                        <div class="p-link" data-id="38">
+                          <div class="p-item-m p-item-left lazyload default_company" data-src="//p0.meituan.net/movie/91277d8da27966875bd63237fbc8b80315427.jpg@120w_172h">
+                            
+                          </div>
+                          <div class="p-desc">
+                              <p class="p-item-name ellipsis-1">北京保利博纳电影发行有限公司</p>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="p-item">
+                        <div class="p-link" data-id="39">
+                          <div class="p-item-m p-item-left lazyload default_company" data-src="//p1.meituan.net/movie/24048980a7fd3cf193b03419aebe45c1152209.jpg@120w_172h">
+                            
+                          </div>
+                          <div class="p-desc">
+                              <p class="p-item-name ellipsis-1">北京紫禁城影业有限责任公司</p>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="p-item">
+                        <div class="p-link" data-id="40">
+                          <div class="p-item-m p-item-left lazyload default_company" data-src="//p0.meituan.net/movie/d782f702f68de0a4c97183e5193e03d89886.png@120w_172h">
+                            <div class="p-item-extra">成都传媒</div>
+                          </div>
+                          <div class="p-desc">
+                              <p class="p-item-name ellipsis-1">成都传媒集团</p>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="p-item">
+                        <div class="p-link" data-id="42">
+                          <div class="p-item-m p-item-left lazyload default_company" data-src="//p0.meituan.net/movie/9d85c9ded9cd78cfd4655de0f0d943ee11764.png@120w_172h">
+                            <div class="p-item-extra">北京春秋</div>
+                          </div>
+                          <div class="p-desc">
+                              <p class="p-item-name ellipsis-1">北京春秋鸿文化投资有限公司</p>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="p-item">
+                        <div class="p-link" data-id="43">
+                          <div class="p-item-m p-item-left lazyload default_company" data-src="//p0.meituan.net/movie/5c9da5bfd3f10257e79accd60ecd9f6212398.png@120w_172h">
+                            <div class="p-item-extra">中凯世纪</div>
+                          </div>
+                          <div class="p-desc">
+                              <p class="p-item-name ellipsis-1">中凯世纪国际文化传媒（北京）有限公司</p>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="p-item">
+                        <div class="p-link" data-id="44">
+                          <div class="p-item-m p-item-left lazyload default_company" data-src="//p0.meituan.net/movie/07693169ff155140f593bd095026650111186.png@120w_172h">
+                            <div class="p-item-extra">北京金英</div>
+                          </div>
+                          <div class="p-desc">
+                              <p class="p-item-name ellipsis-1">北京金英马影视文化有限责任公司</p>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="p-item">
+                        <div class="p-link" data-id="46">
+                          <div class="p-item-m p-item-left lazyload default_company" data-src="//p0.meituan.net/movie/b4cced6f0f0f630c533a4e746ef83df510778.png@120w_172h">
+                            <div class="p-item-extra">英皇星艺</div>
+                          </div>
+                          <div class="p-desc">
+                              <p class="p-item-name ellipsis-1">英皇星艺（北京）文化发展有限公司</p>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="p-item">
+                        <div class="p-link" data-id="48">
+                          <div class="p-item-m p-item-left lazyload default_company" data-src="//p0.meituan.net/movie/5c9da5bfd3f10257e79accd60ecd9f6212398.png@120w_172h">
+                            <div class="p-item-extra">中环股份</div>
+                          </div>
+                          <div class="p-desc">
+                              <p class="p-item-name ellipsis-1">中环股份有限公司</p>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="p-item">
+                        <div class="p-link" data-id="49">
+                          <div class="p-item-m p-item-left lazyload default_company" data-src="//p0.meituan.net/movie/07693169ff155140f593bd095026650111186.png@120w_172h">
+                            <div class="p-item-extra">韩国秀宝</div>
+                          </div>
+                          <div class="p-desc">
+                              <p class="p-item-name ellipsis-1">韩国秀宝电影公司</p>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="p-item">
+                        <div class="p-link" data-id="19243">
+                          <div class="p-item-m p-item-left lazyload default_company" data-src="//p0.meituan.net/movie/5c9da5bfd3f10257e79accd60ecd9f6212398.png@120w_172h">
+                            <div class="p-item-extra">艾回娱乐</div>
+                          </div>
+                          <div class="p-desc">
+                              <p class="p-item-name ellipsis-1">艾回娱乐有限公司</p>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="p-item">
+                        <div class="p-link" data-id="4967">
+                          <div class="p-item-m p-item-left lazyload default_company" data-src="//p0.meituan.net/movie/9d85c9ded9cd78cfd4655de0f0d943ee11764.png@120w_172h">
+                            <div class="p-item-extra">北京广电</div>
+                          </div>
+                          <div class="p-desc">
+                              <p class="p-item-name ellipsis-1">北京广电影视传媒有限公司</p>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="p-item">
+                        <div class="p-link" data-id="297">
+                          <div class="p-item-m p-item-left lazyload default_company" data-src="//p1.meituan.net/movie/69881fb0db27e8e08e8264e723673c7b3703.jpg@120w_172h">
+                            
+                          </div>
+                          <div class="p-desc">
+                              <p class="p-item-name ellipsis-1">北京橙天嘉禾影视制作有限公司</p>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+              </dd>
+            </dl>
+            <dl class="panel-main category">
+              <dt class="panel-header sticky-wrapper">
+                <div class="panel-title need-sticky more-down" data-index="2">
+                  <span class="title-left">
+                    <span class="title-name">发行</span>
+                    <em class="title-count">(4)</em></span>
+                  <span class="panel-arrow"></span>
+                </div>
+              </dt>
+              <dd class="panel-content" style="display:none;">
+                <div class="panel-c">
+                    <div class="p-item">
+                        <div class="p-link" data-id="169">
+                          <div class="p-item-m p-item-left lazyload default_company" data-src="//p0.meituan.net/movie/85eb0530d1d97331de9211dcce6efe5a4141.jpg@120w_172h">
+                            
+                          </div>
+                          <div class="p-desc">
+                              <p class="p-item-name ellipsis-1">安乐影片有限公司</p>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="p-item">
+                        <div class="p-link" data-id="166">
+                          <div class="p-item-m p-item-left lazyload default_company" data-src="//p0.meituan.net/movie/b4cced6f0f0f630c533a4e746ef83df510778.png@120w_172h">
+                            <div class="p-item-extra">香港美亚</div>
+                          </div>
+                          <div class="p-desc">
+                              <p class="p-item-name ellipsis-1">香港美亚娱乐集团</p>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="p-item">
+                        <div class="p-link" data-id="24708">
+                          <div class="p-item-m p-item-left lazyload default_company" data-src="//p0.meituan.net/movie/5c9da5bfd3f10257e79accd60ecd9f6212398.png@120w_172h">
+                            <div class="p-item-extra">Golden</div>
+                          </div>
+                          <div class="p-desc">
+                              <p class="p-item-name ellipsis-1">Golden Village Pictures</p>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="p-item">
+                        <div class="p-link" data-id="19243">
+                          <div class="p-item-m p-item-left lazyload default_company" data-src="//p0.meituan.net/movie/5c9da5bfd3f10257e79accd60ecd9f6212398.png@120w_172h">
+                            <div class="p-item-extra">艾回娱乐</div>
+                          </div>
+                          <div class="p-desc">
+                              <p class="p-item-name ellipsis-1">艾回娱乐有限公司</p>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+              </dd>
+            </dl>
+          </div>
+        <section>
+            <div id="download">
+                <div class="dl-cont">
+                    <img class="dl-img" src="//ms0.meituan.net/piaofang/img/download-icon-dd2726df.png">
+                    <div class="dl-desc">
+                        <h3 class="dl-title">
+                            猫眼专业版
+                        </h3>
+                        <p class="dl-txt">
+                           秒级实时票房随时看
+                        </p>
+                    </div>
+                </div>
+                <a class="dl-action" href="/app">立即下载</a>
+                <script>
+                    var clientType = '普通浏览器';
+            
+                    if (false) clientType = '猫眼App';
+                    if (false) clientType = '团购App';
+            
+                    document.querySelector('.dl-action').addEventListener('touchstart', function() {
+                        logger('_trackEvent', '下载贴条', '下载', clientType);
+                    });
+                </script>
+            </div>
+        </section>
+      </div>
+    </div>
+  </div>
+  <input type="hidden" name="name" value="16" id="movieId" />
+  <input type="hidden" name="proSchema" value="maoyanpro" id="proSchema" />
+  <div class="shareTitle" style="display:none;"></div>
+<script>
+var __limitFeature = 'false';
+//bfcache
+window.addEventListener('pageshow',function (ev){
+    if (ev.persisted) {
+        window.location.reload();
+    }
+});
+</script>
+<script>
+    !function(e,n,t,o){function r(){return a._LXALogNTObject?"hybrid":o?o:/\b(mobile|iphone|htc)\b/gi.test(b)?"mobile":"web"}var a=window,i=document,c="_MeiTuanALogObject";if(a[c]=t,!a[t]){var s=function(){return s.q.push(arguments),s};s.q=s.q||[],s.v=n,s.l=+new Date,s.C=o,a[t]=a[t]||s;var u=i.getElementsByTagName("head")[0],l=i.createElement("script"),b=navigator.userAgent.toLocaleLowerCase(),g=r(),d="";d=e.length-3===e.indexOf(".js")?e:["//",e,"/source/",n,"/",g,".","js"].join(""),l.defer=l.async=!0,l.charset="utf-8",l.src=d,l.onload=l.onerror=function(){},u.appendChild(l)}}("analytics.meituan.com","stable","Analytics","");
+    Analytics('config', 'appnm', 'moviepro');
+    Analytics('config', 'ct', 'i');
+    Analytics('config', 'autoUrlEnv', true)
+    Analytics('use', 'moviepro');
+    Analytics('set', 'cid', '全部参与公司二级页');
+    Analytics('send', 'pv', '全部参与公司二级页');
+</script>
+
+<script>
+var isDev=false;
+var requirejs = {};
+
+requirejs.__require = [];
+var require = function() {
+    requirejs.__require.push(arguments);
+};
+
+    var sRev = {"biz/movie/companylist.js":"35495ad8","lib/zepto.js":"f039f967","util/linkAction.js":"fbe1e078","component/downloadDialog.js":"e41ad8ae","util/tools.js":"7061807c","util/env.js":"0bec12b4","component/panel.js":"66e89608","util/scroller/scroller.js":"50c4a62e","util/debounce.js":"8c472d50","util/listener.js":"f4bc587e","util/scroller/translate.js":"3b97bf73","util/scroller/indicator.js":"946d7c30","util/scroller/ease.js":"8fbbd863","util/scroller/dom-resize.js":"f4924b4a","util/raf.js":"e8c3592a","lib/fastclick.js":"1a6b078c","util/cat-sticky.js":"d35ef44e","component/lazyLoad/lazyLoad.js":"8c88d7a1","util/xnb.js":"99f63fe0","lib/mtnb.js":"b3fc02ad","lib/wechat.js":"2044fc41","util/nAjax.js":"ba169296","util/cookie.js":"e4b7df3e","lib/declareable.js":"dfe43e7d","lib/count.js":"9d05610d","util/gaConfig.js":"81afe990","util/canTouch.js":"998c9c42","util/dateBar.js":"557ec72c","util/calendar.js":"03f83732","util/calendar/renderMonth.js":"719d8e36","util/calendar/decorator/festival.js":"6c87b7e8","lib/solarlunar.js":"1ce10dc9","util/calendar/decorator/marketing.js":"a9c96b9c","util/weeklist.js":"7c24ddbd","util/calendar/dateArea.js":"e9f55f2d","component/toast.js":"b235a4c0","util/calendar/dateSelectDay.js":"c875a960","bridge/calendar.js":"20f6b87f","util/hrefTo.js":"cb7d28ae","util/hisBack.js":"80eb97c7","util/cityBar.js":"67bb8de0","bridge/citylist.js":"88f93561","util/knb-helper.js":"139483d9","util/cityBox.js":"ebb2cd42","util/query.js":"e01798f5","util/searchInput.js":"e7f03e59","util/slider.js":"1eeebc82","lib/swipe.js":"a0e51ec2","util/lazyload.js":"038b9c8d","util/tab.js":"ed26d156","util/gotoTop.js":"edf416a1","util/uploadIdcard.js":"81a04790","util/switchbutton.js":"f97c7514","util/eventHandler.js":"a26f33a8","util/xslider.js":"59b24cd0","util/wheellist.js":"1a7d2f79","util/twowayTable.js":"df7253d5"};
+    var sDep = {"biz/movie/companylist.js":["lib/zepto.js","util/linkAction.js","util/env.js","component/panel.js","util/xnb.js","util/tools.js"],"util/linkAction.js":["component/downloadDialog.js"],"component/downloadDialog.js":["lib/zepto.js","util/tools.js"],"util/tools.js":["lib/zepto.js"],"component/panel.js":["lib/zepto.js","util/env.js","util/scroller/scroller.js","lib/fastclick.js","util/cat-sticky.js","component/lazyLoad/lazyLoad.js"],"util/scroller/scroller.js":["lib/zepto.js","util/debounce.js","util/listener.js","util/scroller/translate.js","util/scroller/indicator.js","util/scroller/ease.js","util/scroller/dom-resize.js","util/raf.js","util/env.js"],"util/scroller/translate.js":["lib/zepto.js","util/listener.js"],"util/scroller/indicator.js":["lib/zepto.js","util/scroller/translate.js","util/debounce.js"],"util/scroller/ease.js":["lib/zepto.js"],"util/scroller/dom-resize.js":["lib/zepto.js"],"util/cat-sticky.js":["util/raf.js","util/env.js"],"component/lazyLoad/lazyLoad.js":["lib/zepto.js","util/raf.js"],"util/xnb.js":["lib/mtnb.js","lib/wechat.js","util/nAjax.js","util/env.js","util/tools.js","util/cookie.js"],"util/nAjax.js":["lib/zepto.js","util/tools.js","util/cookie.js"],"lib/declareable.js":["lib/zepto.js"],"util/gaConfig.js":["lib/zepto.js"],"util/canTouch.js":["lib/zepto.js"],"util/dateBar.js":["lib/zepto.js","util/calendar.js","util/tools.js"],"util/calendar.js":["lib/zepto.js","util/calendar/renderMonth.js","util/weeklist.js","util/calendar/dateArea.js","util/calendar/dateSelectDay.js","util/cat-sticky.js","bridge/calendar.js"],"util/calendar/renderMonth.js":["lib/zepto.js","util/tools.js","util/calendar/decorator/festival.js","util/calendar/decorator/marketing.js"],"util/calendar/decorator/festival.js":["lib/solarlunar.js"],"util/calendar/dateArea.js":["lib/zepto.js","component/toast.js"],"component/toast.js":["lib/zepto.js"],"util/calendar/dateSelectDay.js":["lib/zepto.js","component/toast.js"],"bridge/calendar.js":["lib/zepto.js","util/env.js","util/xnb.js"],"util/hrefTo.js":["lib/zepto.js"],"util/cityBar.js":["lib/zepto.js","util/tools.js","util/nAjax.js","bridge/citylist.js"],"bridge/citylist.js":["lib/zepto.js","util/knb-helper.js","util/env.js","util/xnb.js"],"util/knb-helper.js":["lib/zepto.js","util/tools.js"],"util/cityBox.js":["lib/zepto.js","util/query.js"],"util/slider.js":["lib/zepto.js","lib/swipe.js","util/lazyload.js","util/tools.js"],"util/lazyload.js":["lib/zepto.js"],"util/tab.js":["lib/zepto.js"],"util/uploadIdcard.js":["lib/zepto.js","util/nAjax.js","util/env.js","util/xnb.js","component/toast.js"],"util/switchbutton.js":["lib/zepto.js","util/eventHandler.js"],"util/eventHandler.js":["lib/zepto.js"],"util/xslider.js":["lib/zepto.js"],"util/wheellist.js":["lib/zepto.js"],"util/twowayTable.js":["lib/zepto.js","util/env.js","util/scroller/scroller.js"]};
+    requirejs.__requirejsConfig = {
+        baseUrl:'//ms0.meituan.net/',
+        revision:sRev,
+        prefix: 'piaofang/js/',
+        cachePrefix: 'n~', 
+        combo: {
+            url: '//mc.meituan.net/combo/?f=',
+            deps:sDep
+        }
+    };
+</script>
+<script src="//ms0.meituan.net/piaofang/js/truck.702f89a9.js" id="truckjsnode" async></script>
+<script type="text/javascript">
+require(['lib/declareable.js','lib/count.js','util/gaConfig.js']);
+</script>
+<script>require(['biz/movie/companylist.js']);</script>
+</body>
+</html>
