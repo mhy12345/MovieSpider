@@ -16,18 +16,34 @@ def init():
     with open('configures.json','r') as f:
         cfg = json.load(f)
 
+default_proxy = '111.155.124.84:8123'
 
 def update_ips():
     print("Read Ip Table...")
     for page in range(1,11):
         url="http://www.xicidaili.com/nn/%d"%page
         print(page,"out of",10,'in',url)
-        headers = cfg['xiciheader']
-        r = requests.get(url,headers=headers)
-        if r.text=="block":
-            print("blocked")
-            exit()
-        soup =bs4.BeautifulSoup(r.text,'html.parser')  
+        def undirect(url):
+            html = getHtmlViaProxy(url,default_proxy)
+            if re.search('国内高匿代理',html):
+                return html
+            while True:
+                print("请输入一个HTTP代理：")
+                proxyIp = input()
+                html = getHtmlViaProxy(url,proxyIp)
+                if re.search('国内高匿代理',html):
+                    return html
+                print("Retrie...")
+        def direct(url):
+            headers = cfg['xiciheader']
+            r = requests.get(url,headers=headers)
+            if r.text=="block":
+                print("blocked")
+                return undirect(url)
+            return r.text
+
+        html = direct(url)
+        soup =bs4.BeautifulSoup(html,'html.parser')  
         data=soup.table.find_all("td")  
         ip_compile=re.compile(r'<td>(\d+\.\d+\.\d+\.\d+)</td>')  
         port_compile=re.compile(r"<td>(\d+)</td>")  
@@ -74,5 +90,6 @@ init()
 update_ips()
 
 if __name__ == '__main__':
-    html = getHtmlViaProxy('https://www.douban.com')
+    #html = getHtmlViaProxy('https://www.douban.com')
+    html = getHtmlViaProxy('http://www.xicidaili.com/nn','218.56.132.157:8080')
     print(html)
