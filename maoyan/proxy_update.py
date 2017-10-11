@@ -52,6 +52,8 @@ def update_ips():
         global ips
         ips.extend([":".join(i) for i in zip(ip,port)])
         time.sleep(1)
+    with open('data/xici_ip.txt','w') as f:
+        f.write(get_ips_as_string())
 
 def get_ips_as_string():
     global ips
