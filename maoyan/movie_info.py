@@ -7,7 +7,9 @@ from database import db
 import time
 import random
 import proxy
+import socket
 
+socket.setdefaulttimeout(5)
 
 def fetch_basic_info(mid):
     result = {'id':mid}
@@ -128,7 +130,7 @@ def clean(mid = None):
 
 
 if __name__ == "__main__":
-    mid = 1000
+    mid = 7000
     while True:
         def run(func,mid):
             cnt = 0

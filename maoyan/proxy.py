@@ -93,8 +93,8 @@ def getHtmlViaProxy(url,rawProxyIp=None):
 
 
 init()
-#update_ips()
-load_ips()
+update_ips()
+#load_ips()
 
 if __name__ == '__main__':
     html = getHtmlViaProxy('https://www.douban.com')
