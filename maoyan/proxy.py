@@ -1,136 +1,101 @@
-#coding:UTF-8 
-import urllib
-import urllib.request
-import time
-import threading
-import random
+import requests
+import bs4
 import re
+import json
+import random
+import urllib
 import socket
-import proxy_update
+import datetime
+import time
 
-defaulttimeout = 3
-socket.setdefaulttimeout(defaulttimeout)
-ips = []
-lastTime = None
 
-class ProxyPool:
-    def __init__(self):
-        self.ips = []
-        self.count = dict()
-        self.resume()
-        self.proxyTries = 3
-        self.pageTries = 5
-        self.proxyAppends = 50
-        self.minIpCount = 40
-        self.checkPool()
-        print("Proxy Pool init!")
+def init():
+    global ips
+    global cfg
+    ips = []
+    with open('configures.json','r') as f:
+        cfg = json.load(f)
 
-    def resume(self):
-        with open('data/ips.txt','r') as f:
-            txt = f.read()
-        self.ips.extend(list(map(lambda w : w.strip(),txt.strip().split("\n"))))
-        for w in self.ips:
-            self.count[w] = 0
+default_proxy = '111.155.124.84:8123'
 
-    def store(self):
-        with open('data/ips.txt','w') as f:
-            f.write("\n".join(self.ips))
-
-    def refillPool(self):
-        socket.setdefaulttimeout(30)
-        print("Refill Pool!")
-        #url = 'http://http-webapi.zhimaruanjian.com/getip?num=%d&type=1&pro=&city=0&yys=0&port=11&pack=3386&ts=0&ys=0&cs=0&lb=1&sb=0&pb=4&mr=1'%self.proxyAppends
-        def xici():
-            return proxy_update.get_ips()
-        def zhima():
-            while True:
-                try:
-                    txt = urllib.request.urlopen(url).read().decode('utf-8')
-                except urllib.error.URLError:
-                    print('Little Sleep')
-                    print(url)
-                    time.sleep(15)
-                    continue
-                break
-            if re.search('白名单',txt):
-                print("Ip is not in White List")
-                return
-        txt = xici()
-        print(txt)
-        self.ips.extend(list(map(lambda w : w.strip(),txt.strip().split("\n"))))
-        self.store()
-        with open('data/ips_all.txt','a') as f:
-            f.write('\n' + '\n'.join(list(map(lambda w : w.strip(),txt.strip().split("\n")))))
-        for w in self.ips:
-            self.count[w] = 0
-        socket.setdefaulttimeout(defaulttimeout)
-
-    def checkPool(self):
-        if len(self.ips)<self.minIpCount:
-            self.refillPool()
-
-    def getProxyIp(self):
-        self.checkPool()
-        return random.choice(self.ips)
-
-            
-    def getHtmlViaProxy(self,url,rawProxyIp=None):
-        totalTries = self.pageTries
-        while totalTries:
-            totalTries -= 1
-            if rawProxyIp:
-                proxyIp = rawProxyIp
-            else:
-                proxyIp = self.getProxyIp()
-            print('>>> [%d]Using Proxy Ip : '%len(self.ips),proxyIp)
-            proxy = {'http':proxyIp}
-            proxy_support = urllib.request.ProxyHandler(proxy)
-            opener = urllib.request.build_opener(proxy_support)
-            opener.addheaders = [('User-Agent','Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36')]
-            urllib.request.install_opener(opener)
-            html = ""
-            #使用自己安装好的Opener
-            #读取相应信息并解码
-            def errorDealer():
-                self.count[proxyIp] += 1
-                if self.count[proxyIp] >= self.proxyTries:
-                    print("Bad Ip",proxyIp)
-                    self.ips.remove(proxyIp)
-                    self.store()
-                html = ""
-            def normalDealer():
-                self.count[proxyIp] = 0
-            try:
-                response = urllib.request.urlopen(url)
-                html = response.read().decode("utf-8")
-                normalDealer()
-            except urllib.error.URLError:
-                errorDealer()
-            except ConnectionResetError:
-                errorDealer()
-            except socket.timeout:
-                errorDealer()
-            #打印信息
-            if html != "":
+def update_ips():
+    print("Read Ip Table...")
+    for page in range(1,11):
+        url="http://www.xicidaili.com/nn/%d"%page
+        print(page,"out of",10,'in',url)
+        def undirect(url):
+            html = getHtmlViaProxy(url,default_proxy)
+            if re.search('国内高匿代理',html):
                 return html
-            else:
-                print("Unsecessfull connection")
-        return ""
+            while True:
+                print("请输入一个HTTP代理：")
+                proxyIp = input()
+                html = getHtmlViaProxy(url,proxyIp)
+                if re.search('国内高匿代理',html):
+                    return html
+                print("Retrie...")
+        def direct(url):
+            headers = cfg['xiciheader']
+            r = requests.get(url,headers=headers)
+            if r.text=="block":
+                print("blocked")
+                return undirect(url)
+            return r.text
 
-    def check(self):
-        rg = len(self.ips)*3
-        cid = 0
-        for w in self.ips:
-            cid += 1
-            print(cid," out of ",len(self.ips))
-            #url = 'http://www.whatismyip.com.tw/'
-            url = 'http://ip.chinaz.com'
-            html = P.getHtmlViaProxy(url,w)
-            time.sleep(.1)
-            print("Finish")
-            if cid >= len(self.ips)*3:
-                break
+        html = direct(url)
+        soup =bs4.BeautifulSoup(html,'html.parser')  
+        data=soup.table.find_all("td")  
+        ip_compile=re.compile(r'<td>(\d+\.\d+\.\d+\.\d+)</td>')  
+        port_compile=re.compile(r"<td>(\d+)</td>")  
+        ip=re.findall(ip_compile,str(data))  
+        port=re.findall(port_compile,str(data))  
+        global ips
+        ips.extend([":".join(i) for i in zip(ip,port)])
+        time.sleep(1)
+    with open('data/xici_ip.txt','w') as f:
+        f.write(get_ips_as_string())
+
+def load_ips():
+    global ips
+    with open('data/xici_ip.txt','r') as f:
+        ips = f.read().split('\n')
+def get_ips_as_string():
+    global ips
+    return "\n".join(ips)
+
+def getHtmlViaProxy(url,rawProxyIp=None):
+    global ips
+    print("代理池大小：",len(ips))
+    if rawProxyIp:
+        proxyIp = rawProxyIp
+    else:
+        proxyIp = random.choice(ips)
+    print('>>> proxy_update : [%d]Using Proxy Ip : '%len(ips),proxyIp , 'URL = ',url)
+    proxies = {
+            'http':proxyIp
+            }
+    'User-Agent','Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36'
+    headers = { "Accept":"text/html,application/xhtml+xml,application/xml;",
+            "Accept-Encoding":"gzip, deflate, sdch",
+            "Accept-Language":"zh-CN,zh;q=0.8,en;q=0.6",
+            "Referer":"",
+            "User-Agent":cfg['agents'][0],
+            }
+    html = ""
+    res = requests.get(url,headers=headers,proxies=proxies)
+    if (int(res.status_code) == 200):
+        print(datetime.datetime.now().strftime('%H:%M:%S')+':当前状态是'+str(res.status_code))
+    else:
+        print(datetime.datetime.now().strftime('%H:%M:%S')+'访问错误')
+        ips.remove(proxyIp)
+    html = res.text
+    return html
+
+
+init()
+#update_ips()
+load_ips()
 
 if __name__ == '__main__':
-    P = ProxyPool()
-    P.check()
+    html = getHtmlViaProxy('https://www.douban.com')
+    print(html)

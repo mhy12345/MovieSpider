@@ -6,13 +6,13 @@ import re
 from database import db
 import time
 import random
-import proxy_update
+import proxy
 
 
 def fetch_basic_info(mid):
     result = {'id':mid}
     url = 'https://piaofang.maoyan.com/movie/%d'%mid
-    html = proxy_update.getHtmlViaProxy(url)
+    html = proxy.getHtmlViaProxy(url)
     with open('caches/%d_bas.html'%mid,'w') as f:
         f.write(html)
     soup = BeautifulSoup(html,'lxml')
@@ -53,7 +53,7 @@ def fetch_cel_info(mid):
     url = 'https://piaofang.maoyan.com/movie/%d/celebritylist'%mid
     result = {'id':mid}
     #html = urllib.request.urlopen(url).read().decode('utf-8')
-    html = proxy_update.getHtmlViaProxy(url)
+    html = proxy.getHtmlViaProxy(url)
     with open('caches/%d_cel.html'%mid,'w') as f:
         f.write(html)
     soup = BeautifulSoup(html,'lxml')
@@ -87,7 +87,7 @@ def fetch_cel_info(mid):
 def fetch_com_info(mid):
     url = 'https://piaofang.maoyan.com/movie/%d/companylist'%mid
     result = {'id':mid}
-    html = proxy_update.getHtmlViaProxy(url)
+    html = proxy.getHtmlViaProxy(url)
     with open('caches/%d_com.html'%mid,'w') as f:
         f.write(html)
     soup = BeautifulSoup(html,'lxml')
@@ -128,7 +128,7 @@ def clean(mid = None):
 
 
 if __name__ == "__main__":
-    mid = 600
+    mid = 1000
     while True:
         def run(func,mid):
             cnt = 0
@@ -153,4 +153,4 @@ if __name__ == "__main__":
         db.maoyan_status.save({'id':mid})
         print(mid)
         mid += 1
-        #time.sleep(1)
+        time.sleep(1)
