@@ -17,7 +17,7 @@ def init():
         cfg = json.load(f)
 
 default_proxy = '111.155.124.84:8123'
-total_page = 15
+total_page = 1
 
 def update_ips():
     print("Read Ip Table...")

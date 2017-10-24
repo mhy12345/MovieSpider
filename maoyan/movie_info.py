@@ -44,6 +44,8 @@ def fetch_basic_info(mid):
             result['boxOffice_'+t1.group(1)+'_num'] = "".join(map(lambda w:w.strip(),res3.strings))
     res = db.maoyan_info.find_one({'id':result['id']})
     if not res:
+        if '_id' in result.keys():
+            del result['_id']
         db.maoyan_info.save(result)
     else:
         print("Already Exist!")
@@ -80,8 +82,10 @@ def fetch_cel_info(mid):
                 elist.append(item.string)
         result['elist'] = elist
         result['clist'] = clist
-        if not db.maoyan_cel_info.find_one({'id':result['id'],'field':ptitle}):
-            db.maoyan_cel_info.save(result)
+        if not db.test.find_one({'id':result['id'],'field':ptitle}):
+            if '_id' in result.keys():
+                del result['_id']
+            db.test.save(result)
         else:
             print("Already Exist!")
     return "Success"
@@ -110,6 +114,8 @@ def fetch_com_info(mid):
         result['list'] = clist
         #print(result)
         if not db.maoyan_com_info.find_one({'id':result['id'],'field':ptitle}):
+            if '_id' in result.keys():
+                del result['_id']
             db.maoyan_com_info.save(result)
         else:
             print("Already Exist!")
@@ -130,7 +136,8 @@ def clean(mid = None):
 
 
 if __name__ == "__main__":
-    mid = 19000
+    clen()
+    mid = 1
     while True:
         def run(func,mid):
             cnt = 0
