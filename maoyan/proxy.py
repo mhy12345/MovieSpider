@@ -17,10 +17,11 @@ def init():
         cfg = json.load(f)
 
 default_proxy = '111.155.124.84:8123'
+total_page = 15
 
 def update_ips():
     print("Read Ip Table...")
-    for page in range(1,11):
+    for page in range(1,total_page+1):
         url="http://www.xicidaili.com/nn/%d"%page
         print(page,"out of",10,'in',url)
         def undirect(url):
@@ -28,7 +29,7 @@ def update_ips():
             if re.search('国内高匿代理',html):
                 return html
             while True:
-                print("请输入一个HTTP代理：")
+                print("Please type the proxy address：")
                 proxyIp = input()
                 html = getHtmlViaProxy(url,proxyIp)
                 if re.search('国内高匿代理',html):
@@ -50,7 +51,7 @@ def update_ips():
         ip=re.findall(ip_compile,str(data))  
         port=re.findall(port_compile,str(data))  
         global ips
-        ips.extend([":".join(i) for i in zip(ip,port)])
+        ips =[":".join(i) for i in zip(ip,port)]
         time.sleep(1)
     with open('data/xici_ip.txt','w') as f:
         f.write(get_ips_as_string())
@@ -65,7 +66,7 @@ def get_ips_as_string():
 
 def getHtmlViaProxy(url,rawProxyIp=None):
     global ips
-    print("代理池大小：",len(ips))
+    print("Size of pool:",len(ips))
     if rawProxyIp:
         proxyIp = rawProxyIp
     else:
@@ -82,11 +83,15 @@ def getHtmlViaProxy(url,rawProxyIp=None):
             "User-Agent":cfg['agents'][0],
             }
     html = ""
-    res = requests.get(url,headers=headers,proxies=proxies)
+    try:
+        res = requests.get(url,headers=headers,proxies=proxies)
+    except requests.exceptions.ConnectionError:
+        print(datetime.datetime.now().strftime('%H:%M:%S')+' : Current Status : Connection Error')
+        return ""
     if (int(res.status_code) == 200):
-        print(datetime.datetime.now().strftime('%H:%M:%S')+':当前状态是'+str(res.status_code))
+        print(datetime.datetime.now().strftime('%H:%M:%S')+' : Current Status : '+str(res.status_code))
     else:
-        print(datetime.datetime.now().strftime('%H:%M:%S')+'访问错误')
+        print(datetime.datetime.now().strftime('%H:%M:%S')+' : Error')
         ips.remove(proxyIp)
     html = res.text
     return html

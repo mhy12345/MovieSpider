@@ -130,7 +130,7 @@ def clean(mid = None):
 
 
 if __name__ == "__main__":
-    mid = 7000
+    mid = 19000
     while True:
         def run(func,mid):
             cnt = 0
@@ -156,3 +156,7 @@ if __name__ == "__main__":
         print(mid)
         mid += 1
         time.sleep(1)
+        if mid % 4000 == 0:
+            print("Relax... ")
+            time.sleep(60*60*6)
+            proxy.update_ips();
