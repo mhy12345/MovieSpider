@@ -82,10 +82,10 @@ def fetch_cel_info(mid):
                 elist.append(item.string)
         result['elist'] = elist
         result['clist'] = clist
-        if not db.test.find_one({'id':result['id'],'field':ptitle}):
+        if not db.maoyan_cel_info.find_one({'id':result['id'],'field':ptitle}):
             if '_id' in result.keys():
                 del result['_id']
-            db.test.save(result)
+            db.maoyan_cel_info.save(result)
         else:
             print("Already Exist!")
     return "Success"
@@ -136,7 +136,6 @@ def clean(mid = None):
 
 
 if __name__ == "__main__":
-    clen()
     mid = 1
     while True:
         def run(func,mid):
@@ -163,7 +162,7 @@ if __name__ == "__main__":
         print(mid)
         mid += 1
         time.sleep(1)
-        if mid % 4000 == 0:
+        if mid % 5000 == 0:
             print("Relax... ")
-            time.sleep(60*60*6)
+            time.sleep(60*60*3)
             proxy.update_ips();
